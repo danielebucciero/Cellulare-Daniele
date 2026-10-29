@@ -1,0 +1,11 @@
+{
+  "name": "agenda-daniele",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Agenda personale per il telefono: impegni per giorno, settimana e completati.",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test test/*.test.mjs"
+  }
+}

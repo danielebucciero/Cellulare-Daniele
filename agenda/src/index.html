@@ -1,0 +1,92 @@
+<title>Agenda di Daniele</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="theme-color" content="#f4f6f9">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/*@STYLES*/
+</style>
+
+<header class="topbar">
+  <div class="topbar__row">
+    <div class="brand">
+      <p class="brand__date" id="oggi-label"></p>
+      <h1 class="brand__title">Agenda</h1>
+    </div>
+    <label class="search" for="cerca">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <input id="cerca" type="search" placeholder="Cerca" autocomplete="off" aria-label="Cerca impegni">
+    </label>
+  </div>
+  <nav class="tabs" aria-label="Viste dell'agenda">
+    <a class="tab" href="#prossimi" data-view="prossimi">Prossimi <span class="tab__count" id="count-prossimi"></span></a>
+    <a class="tab" href="#settimana" data-view="settimana">Settimana</a>
+    <a class="tab" href="#completati" data-view="completati">Completati <span class="tab__count" id="count-completati"></span></a>
+  </nav>
+</header>
+
+<p class="banner" id="banner" hidden></p>
+
+<main class="main" id="main" aria-live="polite"></main>
+
+<button class="fab" id="fab-nuovo" type="button" data-action="new">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+  Nuovo
+</button>
+
+<div class="sheet-backdrop" id="sheet" hidden>
+  <form class="sheet" id="form-impegno" role="dialog" aria-modal="true" aria-labelledby="sheet-title" novalidate>
+    <div class="sheet__head">
+      <h2 class="sheet__title" id="sheet-title">Nuovo impegno</h2>
+      <button class="icon-btn" type="button" data-action="close-sheet" aria-label="Chiudi">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+
+    <label class="field" for="f-titolo">
+      <span class="field__label">Cosa</span>
+      <input id="f-titolo" name="titolo" maxlength="140" placeholder="Es. Chiamare lo studio" autocomplete="off">
+    </label>
+    <p class="field__error" id="err-titolo" hidden></p>
+
+    <div class="field-row">
+      <label class="field" for="f-data">
+        <span class="field__label">Giorno</span>
+        <input id="f-data" name="data" type="date">
+      </label>
+      <label class="field" for="f-ora">
+        <span class="field__label">Ora <small>(facoltativa)</small></span>
+        <input id="f-ora" name="ora" type="time">
+      </label>
+    </div>
+    <p class="field__error" id="err-data" hidden></p>
+    <div class="quick-dates" id="quick-dates"></div>
+
+    <fieldset class="field">
+      <legend class="field__label">Categoria</legend>
+      <div class="segmented" id="f-categorie"></div>
+    </fieldset>
+
+    <label class="field" for="f-note">
+      <span class="field__label">Note</span>
+      <textarea id="f-note" name="note" rows="3" maxlength="1000" placeholder="Indirizzo, numero di telefono, documenti da portare…"></textarea>
+    </label>
+
+    <div class="sheet__actions">
+      <button class="btn btn--danger" type="button" id="btn-elimina" data-action="delete" hidden>Elimina</button>
+      <span class="spacer"></span>
+      <button class="btn btn--ghost" type="button" data-action="close-sheet">Annulla</button>
+      <button class="btn btn--primary" type="submit" id="btn-salva">Salva</button>
+    </div>
+  </form>
+</div>
+
+<div class="toast" id="toast" role="status" hidden>
+  <span id="toast-text"></span>
+  <button class="toast__undo" type="button" id="toast-undo" hidden>Annulla</button>
+</div>
+
+<script>
+/*@SCRIPTS*/
+</script>

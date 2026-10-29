@@ -13,10 +13,9 @@
 ## Annuali
 | Data | Adempimento |
 |---|---|
+| 31 gennaio | Prospetto informativo disabili (L. 68/1999), se dovuto |
 | 16 febbraio | Autoliquidazione INAIL (premio e rata) |
 | 16 marzo | Invio e consegna Certificazione Unica (CU) |
-| 30 aprile | Prospetto informativo disabili (L. 68/1999) se dovuto — termine 31 gennaio, verificare |
-| 16 maggio | Seconda rata contributi IVS artigiani/commercianti |
 | 30 settembre | Termine presentazione 730 |
 | 31 ottobre | Modello 770 |
 | 16 dicembre | Imposta sostitutiva rivalutazione TFR (saldo a febbraio) |

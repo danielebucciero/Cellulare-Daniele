@@ -1,0 +1,68 @@
+giorno,data,categoria,descrizione,costo_isk,costo_eur_2_persone,costo_eur_a_persona,fonte
+1,2027-03-27,volo,"Olbia → Milano Malpensa, 2 biglietti solo andata, bagaglio a mano",17040,120.00,60.00,https://www.momondo.it/volo/olbia/aeroporto-di-milano-malpensa-mxp [STIMA]
+1,2027-03-27,volo,"Olbia → Malpensa, 1 bagaglio da stiva condiviso",4970,35.00,17.50,https://www.momondo.it/volo/olbia/aeroporto-di-milano-malpensa-mxp [STIMA]
+1,2027-03-27,volo,"Malpensa → Keflavík (easyJet/Wizz Air), 2 biglietti solo andata",42600,300.00,150.00,https://www.kayak.it/voli/Milano-Aeroporto-Malpensa-MXP/Reykjavik-Keflavik-KEF [STIMA]
+1,2027-03-27,volo,"Malpensa → Keflavík, 1 bagaglio da stiva 23 kg condiviso",6390,45.00,22.50,https://www.kayak.it/voli/Milano-Aeroporto-Malpensa-MXP/Reykjavik-Keflavik-KEF [STIMA]
+1,2027-03-27,auto,"Noleggio Dacia Duster 4x4 o simile, 8 giorni (27/3–4/4), periodo pasquale",62480,440.00,220.00,https://www.kayak.it/Autonoleggi-economici-Keflavik.5406.cars.ksp ; https://www.discovercars.com/it/suv/keflafik-airport-kef_1787 [STIMA]
+1,2027-03-27,auto,"Assicurazione SCDW + ghiaia/pietrisco (GP), 8 giorni",20448,144.00,72.00,https://www.discovercars.com/it/suv/keflafik-airport-kef_1787 [STIMA]
+1,2027-03-27,carburante,Gasolio per 120 km (7.8 L a 6.5 L/100 km),2457,17.30,8.65,"https://dailyfuels.com/iceland/ (diesel 315 ISK/L, ott. 2026) [STIMA]"
+1,2027-03-27,alloggio,"Setrið Guesthouse, Borgarnes (cucina in comune)",17500,123.24,61.62,https://www.priceline.com/hotel-deals/en-us/P5000084841/H101442706/setrid-guesthouse.ssp [STIMA]
+1,2027-03-27,cibo,Spesa grande al Bónus di Reykjanesbær (scorte per Pasqua: 28–29/3 negozi chiusi),18000,126.76,63.38,https://guidetoiceland.is/travel-info/food-prices-in-iceland [STIMA]
+2,2027-03-28,carburante,Gasolio per 246 km (16.0 L a 6.5 L/100 km),5037,35.47,17.74,"https://dailyfuels.com/iceland/ (diesel 315 ISK/L, ott. 2026) [STIMA]"
+2,2027-03-28,alloggio,Bólstaðarhlíð Guesthouse – appartamento (con cucina),19500,137.32,68.66,https://www.hotels.com/ho891702144/bolsta-arhli-guesthouse-blonduos-iceland/ [STIMA]
+2,2027-03-28,cibo,"Pranzo alla stazione N1 Staðarskáli (zuppa/hot dog), aperta a Pasqua",5000,35.21,17.61,https://isnet.is/iceland/food/ [STIMA]
+3,2027-03-29,auto,"Pedaggio galleria Vaðlaheiðargöng (Akureyri → Goðafoss), pagamento online",1800,12.68,6.34,https://veggjald.is (da verificare) [STIMA]
+3,2027-03-29,carburante,Gasolio per 210 km (13.7 L a 6.5 L/100 km),4300,30.28,15.14,"https://dailyfuels.com/iceland/ (diesel 315 ISK/L, ott. 2026) [STIMA]"
+3,2027-03-29,alloggio,"Eldá Guesthouse, Reykjahlíð – Mývatn (bagno in comune)",20000,140.85,70.42,https://www.kayak.com/Myvatn-Hotels-Elda-Guesthouse.2313389.ksp [STIMA]
+3,2027-03-29,cibo,Rifornimento spesa ad Akureyri (verificare apertura Lunedì dell'Angelo),8000,56.34,28.17,https://guidetoiceland.is/travel-info/food-prices-in-iceland [STIMA]
+3,2027-03-29,cibo,"Cena a Daddi's Pizza, Reykjahlíð",7500,52.82,26.41,https://isnet.is/iceland/food/ [STIMA]
+4,2027-03-30,carburante,Gasolio per 269 km (17.5 L a 6.5 L/100 km),5508,38.79,19.39,"https://dailyfuels.com/iceland/ (diesel 315 ISK/L, ott. 2026) [STIMA]"
+4,2027-03-30,parcheggio,Hverir / Námafjall,1000,7.04,3.52,https://www.gocampers.is/guides/money/parking-fees-iceland/ [STIMA]
+4,2027-03-30,parcheggio,Dettifoss ovest (fonti discordanti: gratuito o 1.000),1000,7.04,3.52,https://www.holdurcarrental.is/travel-inspiration/your-guide-to-visiting-dettifoss-waterfall-by-car-icelands-thundering-wonder-awaits [STIMA]
+4,2027-03-30,parcheggio,Stuðlagil ovest (Parka o terminale),1000,7.04,3.52,https://www.gocampers.is/guides/money/parking-fees-iceland/
+4,2027-03-30,alloggio,"Lyngás Guesthouse, Egilsstaðir (cucina in comune)",16500,116.20,58.10,https://www.priceline.com/hotel-deals/en-us/P5000372856/H48867404/lyngas-guesthouse.ssp [STIMA]
+4,2027-03-30,cibo,"Zuppa di carne a Fjallakaffi, Möðrudalur (2 porzioni)",5800,40.85,20.42,https://isnet.is/iceland/food/ [STIMA]
+4,2027-03-30,cibo,Spesa al Bónus di Egilsstaðir,7000,49.30,24.65,https://guidetoiceland.is/travel-info/food-prices-in-iceland [STIMA]
+5,2027-03-31,carburante,Gasolio per 260 km (16.9 L a 6.5 L/100 km),5324,37.49,18.75,"https://dailyfuels.com/iceland/ (diesel 315 ISK/L, ott. 2026) [STIMA]"
+5,2027-03-31,alloggio,"Höfn Guesthouse, Hafnarbraut 21 – Höfn",14000,98.59,49.30,https://www.kayak.com/Hofn-Hotels-Hoefn-Guesthouse.2604228.ksp [STIMA]
+5,2027-03-31,cibo,Spesa per pranzo al sacco + colazioni,4000,28.17,14.08,https://guidetoiceland.is/travel-info/food-prices-in-iceland [STIMA]
+5,2027-03-31,cibo,"Panini all'aragosta (humar) a Höfn, 2 porzioni",7000,49.30,24.65,https://isnet.is/iceland/food/ [STIMA]
+5,2027-03-31,attività,Ingresso Stokksnes / Vestrahorn al Viking Café (2×1.100),2200,15.49,7.75,https://www.hertz.is/iceland-attractions/stokksnes/
+6,2027-04-01,carburante,Gasolio per 201 km (13.1 L a 6.5 L/100 km),4115,28.98,14.49,"https://dailyfuels.com/iceland/ (diesel 315 ISK/L, ott. 2026) [STIMA]"
+6,2027-04-01,parcheggio,Jökulsárlón,1000,7.04,3.52,https://happycampers.is/driving-in-iceland-parking-fees-and-road-tolls/
+6,2027-04-01,parcheggio,Diamond Beach,1000,7.04,3.52,https://happycampers.is/driving-in-iceland-parking-fees-and-road-tolls/ [STIMA]
+6,2027-04-01,parcheggio,Fjallsárlón,1000,7.04,3.52,https://happycampers.is/driving-in-iceland-parking-fees-and-road-tolls/ [STIMA]
+6,2027-04-01,alloggio,"Landbrot Guesthouse, Kirkjubæjarklaustur (angolo cottura in camera)",18500,130.28,65.14,https://www.hotels.com/es/ho1189421632/ [STIMA]
+6,2027-04-01,cibo,Zuppa al caffè di Jökulsárlón (2 porzioni),5000,35.21,17.61,https://isnet.is/iceland/food/ [STIMA]
+6,2027-04-01,cibo,Spesa al Kjarval di Kirkjubæjarklaustur,6000,42.25,21.13,https://guidetoiceland.is/travel-info/food-prices-in-iceland [STIMA]
+7,2027-04-02,carburante,Gasolio per 194 km (12.6 L a 6.5 L/100 km),3972,27.97,13.99,"https://dailyfuels.com/iceland/ (diesel 315 ISK/L, ott. 2026) [STIMA]"
+7,2027-04-02,parcheggio,Reynisfjara (750–1.000 secondo il parcheggio),1000,7.04,3.52,https://happycampers.is/driving-in-iceland-parking-fees-and-road-tolls/
+7,2027-04-02,parcheggio,Skógafoss,1000,7.04,3.52,https://happycampers.is/driving-in-iceland-parking-fees-and-road-tolls/
+7,2027-04-02,parcheggio,Seljalandsfoss (checkit.is),1000,7.04,3.52,https://www.locationscout.net/articles/81-iceland-update-2026-new-road-fees-parking-costs-and-digital-border-controls
+7,2027-04-02,alloggio,"Welcome Riverside Guesthouse, Hella (cucina in comune)",15000,105.63,52.82,https://kayak.ie/Hella-Hotels-Welcome-Riverside-Guesthouse.2846257.ksp [STIMA]
+7,2027-04-02,cibo,Spesa alla Krónan di Vík,6000,42.25,21.13,https://guidetoiceland.is/travel-info/food-prices-in-iceland [STIMA]
+7,2027-04-02,cibo,"Pranzo a Vík (hamburger, 2 porzioni)",7600,53.52,26.76,https://isnet.is/iceland/food/ [STIMA]
+8,2027-04-03,carburante,Gasolio per 240 km (15.6 L a 6.5 L/100 km),4914,34.61,17.30,"https://dailyfuels.com/iceland/ (diesel 315 ISK/L, ott. 2026) [STIMA]"
+8,2027-04-03,parcheggio,"Þingvellir (1.000 nel 2025, 1.200 stimato)",1200,8.45,4.23,https://www.locationscout.net/articles/81-iceland-update-2026-new-road-fees-parking-costs-and-digital-border-controls [STIMA]
+8,2027-04-03,parcheggio,Sosta a pagamento a Reykjavík (sera + mattina),1500,10.56,5.28,https://www.camperrentaliceland.com/blog/driving/parking-iceland [STIMA]
+8,2027-04-03,alloggio,Reykjavik Peace Center Guesthouse (cucina),16000,112.68,56.34,https://www.kayak.com/Reykjavik-Hotels-Reykjavik-Peace-Center---Guesthouse.363676.ksp [STIMA]
+8,2027-04-03,cibo,Spesa per pranzo al sacco,4000,28.17,14.08,https://guidetoiceland.is/travel-info/food-prices-in-iceland [STIMA]
+8,2027-04-03,cibo,"Cena a Reykjavík: zuppa di agnello a volontà, Icelandic Street Food (2×2.290)",4580,32.25,16.13,https://www.machupicchu.org/reykjavik-budget-guide-2026-complete-cost-breakdown.htm [STIMA]
+8,2027-04-03,attività,Ingresso cratere Kerið (2×700),1400,9.86,4.93,https://en.wikipedia.org/wiki/Keri%C3%B0
+9,2027-04-04,volo,"Keflavík → Milano Malpensa, 2 biglietti solo andata",42600,300.00,150.00,https://www.kayak.it/voli/Milano-Aeroporto-Malpensa-MXP/Reykjavik-Keflavik-KEF [STIMA]
+9,2027-04-04,volo,"Keflavík → Malpensa, 1 bagaglio da stiva condiviso",6390,45.00,22.50,https://www.kayak.it/voli/Milano-Aeroporto-Malpensa-MXP/Reykjavik-Keflavik-KEF [STIMA]
+9,2027-04-04,volo,"Milano Malpensa → Olbia, 2 biglietti solo andata",17040,120.00,60.00,https://www.momondo.it/volo/olbia/aeroporto-di-milano-malpensa-mxp [STIMA]
+9,2027-04-04,volo,"Malpensa → Olbia, 1 bagaglio da stiva condiviso",4970,35.00,17.50,https://www.momondo.it/volo/olbia/aeroporto-di-milano-malpensa-mxp [STIMA]
+9,2027-04-04,carburante,Gasolio per 72 km (4.7 L a 6.5 L/100 km),1474,10.38,5.19,"https://dailyfuels.com/iceland/ (diesel 315 ISK/L, ott. 2026) [STIMA]"
+9,2027-04-04,tassa chilometrica,"Kílómetragjald 6.95 ISK/km × 1812 km, addebitata alla riconsegna",12593,88.68,44.34,https://www.dollar.is/iceland-travel-guide/driving-in-iceland/icelands-new-kilometer-tax-2026-a-complete-guide/
+9,2027-04-04,cibo,Spuntino in aeroporto KEF (2 persone),5000,35.21,17.61,https://isnet.is/iceland/food/ [STIMA]
+9,2027-04-04,attività,"Blue Lagoon, biglietto Comfort (2×13.500; tariffa 2026 13.000, 2027 stimata)",27000,190.14,95.07,https://www.bluelagoon.com/travel-professionals/BL-ratecard2026 [STIMA]
+,,volo,TOTALE volo,142000,1000.00,500.00,
+,,auto,TOTALE auto,84728,596.68,298.34,
+,,carburante,TOTALE carburante,37101,261.27,130.64,
+,,tassa chilometrica,TOTALE tassa chilometrica,12593,88.68,44.34,
+,,parcheggio,TOTALE parcheggio,11700,82.39,41.20,
+,,alloggio,TOTALE alloggio,137000,964.79,482.39,
+,,cibo,TOTALE cibo,100480,707.61,353.80,
+,,attività,TOTALE attività,30600,215.49,107.75,
+,,TOTALE,TOTALE GENERALE,556202,3916.92,1958.46,"Cambio 1 EUR = 142 ISK: https://www.dove-e-quando.it/soldi/islanda/reykjavik/ (141,6 al 23/08/2026) e https://www.profee.com/it/currency-exchange/eur-isk"

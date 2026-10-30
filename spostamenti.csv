@@ -1,0 +1,41 @@
+giorno,data,partenza,arrivo,km,durata_stimata,strade_da_controllare
+1,2027-03-27,Aeroporto KEF (ritiro auto),Reykjanesbær (Bónus),5,0 h 10 min,—
+1,2027-03-27,Reykjanesbær,Borgarnes,115,1 h 30 min,Strada 41 e Ring Road 1; galleria Hvalfjarðargöng (gratuita); vento forte a Kjalarnes
+2,2027-03-28,Borgarnes,Hvammstangi,128,1 h 40 min,Passo Holtavörðuheiði (407 m) sulla 1: neve e chiusure frequenti
+2,2027-03-28,Hvammstangi,Hvítserkur,30,0 h 45 min,"Strada 711 sterrata, servizio invernale ridotto: controllare umferdin.is"
+2,2027-03-28,Hvítserkur,Blönduós (via Borgarvirki),60,1 h 00 min,"Strade 711/716 sterrate, poi Ring Road 1"
+2,2027-03-28,Blönduós,Bólstaðarhlíð,28,0 h 20 min,Ring Road 1
+3,2027-03-29,Bólstaðarhlíð,Varmahlíð,30,0 h 25 min,Passo Vatnsskarð sulla 1
+3,2027-03-29,Varmahlíð,Akureyri,95,1 h 15 min,"Passo Öxnadalsheiði (540 m): neve, ghiaccio, chiusure con bufera"
+3,2027-03-29,Akureyri,Goðafoss,35,0 h 30 min,"Galleria a pedaggio Vaðlaheiðargöng oppure passo Víkurskarð (gratuito, spesso chiuso)"
+3,2027-03-29,Goðafoss,Reykjahlíð (Mývatn),50,0 h 40 min,"Ring Road 1, tratti ghiacciati"
+4,2027-03-30,Reykjahlíð,Hverir (Námafjall),7,0 h 10 min,Passo Námaskarð sulla 1
+4,2027-03-30,Hverir,Dettifoss ovest,50,0 h 45 min,Strada 862: servizio invernale solo da metà marzo e può chiudere all'improvviso; la 864 (lato est) è senza servizio invernale
+4,2027-03-30,Dettifoss ovest,Möðrudalur (Fjallakaffi),67,0 h 55 min,Altipiano Möðrudalsöræfi (~600 m) sulla 1: tra i tratti più esposti dell'isola
+4,2027-03-30,Möðrudalur,Stuðlagil ovest (Grund),75,1 h 00 min,"Strada 923 Jökuldalsvegur: ultimo tratto sterrato, verificare servizio invernale"
+4,2027-03-30,Stuðlagil ovest,Egilsstaðir,70,0 h 55 min,Strada 923 e Ring Road 1
+5,2027-03-31,Egilsstaðir,Fáskrúðsfjörður,50,0 h 45 min,Passo Fagradalur (strada 92); galleria Fáskrúðsfjarðargöng. NON usare la 939 Öxi: senza servizio invernale
+5,2027-03-31,Fáskrúðsfjörður,Djúpivogur,105,1 h 25 min,"Strada costiera 96/1 dei fiordi orientali, cadute massi"
+5,2027-03-31,Djúpivogur,Stokksnes,90,1 h 10 min,"Ring Road 1, Hvalnesskriður (frane); galleria Almannaskarð"
+5,2027-03-31,Stokksnes,Höfn,15,0 h 15 min,Breve tratto sterrato verso il Viking Café
+6,2027-04-01,Höfn,Jökulsárlón,80,1 h 00 min,"Ring Road 1, vento laterale"
+6,2027-04-01,Jökulsárlón,Diamond Beach,1,0 h 05 min,—
+6,2027-04-01,Diamond Beach,Fjallsárlón,11,0 h 10 min,—
+6,2027-04-01,Fjallsárlón,Múlagljúfur (parcheggio),14,0 h 20 min,"Ultimi 2 km sterrati e sconnessi, senza segnaletica"
+6,2027-04-01,Múlagljúfur,Skaftafell,25,0 h 20 min,"Ring Road 1, raffiche al Skeiðarársandur"
+6,2027-04-01,Skaftafell,Kirkjubæjarklaustur,70,0 h 55 min,"Ring Road 1, ponti a corsia unica"
+7,2027-04-02,Kirkjubæjarklaustur,Vík,72,0 h 55 min,"Mýrdalssandur: tempeste di vento e sabbia, chiusure della 1 frequenti"
+7,2027-04-02,Vík,Reynisfjara,10,0 h 15 min,Strada 215
+7,2027-04-02,Reynisfjara,Dyrhólaey,12,0 h 15 min,"Strada 218: tratto ripido e sterrato verso il faro, può essere chiuso"
+7,2027-04-02,Dyrhólaey,Skógafoss,30,0 h 25 min,Ring Road 1
+7,2027-04-02,Skógafoss,Seljalandsfoss,30,0 h 25 min,"Ring Road 1, raffiche sotto l'Eyjafjallajökull"
+7,2027-04-02,Seljalandsfoss,Hella,40,0 h 30 min,Ring Road 1
+8,2027-04-03,Hella,Kerið,50,0 h 40 min,Ring Road 1 e strada 35
+8,2027-04-03,Kerið,Faxi,45,0 h 35 min,Strada 35
+8,2027-04-03,Faxi,Geysir,20,0 h 15 min,Strada 35
+8,2027-04-03,Geysir,Gullfoss,10,0 h 10 min,Strada 35
+8,2027-04-03,Gullfoss,Þingvellir,70,1 h 00 min,Strade 35/37/365 (Lyngdalsheiði): ghiaccio
+8,2027-04-03,Þingvellir,Reykjavík,45,0 h 45 min,Strada 36 Mosfellsheiði: chiusure con bufera
+9,2027-04-04,Reykjavík,Blue Lagoon,50,0 h 45 min,"Strade 41 e 43: attività vulcanica a Reykjanes/Grindavík, controllare chiusure su safetravel.is"
+9,2027-04-04,Blue Lagoon,Aeroporto KEF (riconsegna auto),22,0 h 25 min,Strada 43/41
+,,TOTALE,,1812,25 h 45 min,

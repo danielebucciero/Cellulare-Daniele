@@ -1,6 +1,7 @@
 # Indice dei digest
 
 <!-- Le nuove righe vanno aggiunte in cima, sotto questo commento -->
+- [2026-11-04](2026/2026-11-04.md) — 4 novità: messaggio INPS 3527/2026 AOI lavoratrici madri; circolare INPS 109/2026 cessione del quinto; SIISL dal 1/12; nuovo Consiglio nazionale CdL
 - [2026-11-03](2026/2026-11-03.md) — 2 novità: messaggio INPS 3527/2026 (da verificare); calendario parlamentare DDL Bilancio 2027
 - [2026-11-02](2026/2026-11-02.md) — 4 novità: messaggio INPS 3484/2026 malattia pagamento diretto; circolare INPS 108/2026 riscatto gravi patologie; circolare INL 2377/2026; ISCRO chiusa il 31/10
 - [2026-10-30](2026/2026-10-30.md) — 1 novità: DDL di Bilancio 2027 approvato in CdM (misure per il lavoro)

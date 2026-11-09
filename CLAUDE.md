@@ -9,6 +9,9 @@ Quando ti viene chiesto di generare il digest:
 1. Leggi `temi.md`, `fonti.md` e gli ultimi 5 digest in `digest/` (per non ripetere notizie già riportate).
 2. Cerca sul web le novità pubblicate dall'ultimo digest (di norma le ultime 24 ore; il lunedì copri il fine settimana).
    Fai più ricerche in parallelo, una per area di `temi.md`, privilegiando le fonti ufficiali di `fonti.md`.
+   Il lunedì cerca anche la rassegna "Le Novità Normative della Settimana" del Consiglio nazionale dei Consulenti
+   del Lavoro e le sentenze della Corte costituzionale e della Cassazione in materia di lavoro, per recuperare novità
+   sfuggite nei giorni precedenti.
 3. Includi solo novità concrete e datate: norme pubblicate in Gazzetta Ufficiale, decreti, circolari e messaggi
    INPS/INAIL/INL/Agenzia delle Entrate, interpelli, rinnovi o accordi CCNL, sentenze rilevanti, scadenze imminenti.
    Escludi opinioni, notizie non verificabili e duplicati.

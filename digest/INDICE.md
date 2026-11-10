@@ -1,6 +1,7 @@
 # Indice dei digest
 
 <!-- Le nuove righe vanno aggiunte in cima, sotto questo commento -->
+- [2026-11-10](2026/2026-11-10.md) — 3 novità: nota INL 2469/2026 patente a crediti; D.Lgs. 179/2026 divieto decisioni automatizzate; Lombardia sanzioni formazione sicurezza
 - [2026-11-09](2026/2026-11-09.md) — 5 novità: Corte cost. 174/2026 licenziamenti piccole imprese; decreto piattaforme digitali dal 2/12; D.Lgs. 179/2026 AI al lavoro; Fondazione Studi digitalizzazione documenti; INPS msg 3601/2026
 - [2026-11-06](2026/2026-11-06.md) — 4 novità: nota INL 2377/2026 formazione neoassunti; SIISL ID posizione in UniEmens; contratti di solidarietà domande 30/11–10/12; circolare INPS 110/2026
 - [2026-11-05](2026/2026-11-05.md) — 5 novità: SIISL obbligatorio per assunzioni agevolate dal 1/12; patente a crediti requisiti aggiuntivi; INPS msg 3575/2026 massimale Gestione separata; aumenti CCNL dal 1/11; DDL Bilancio 5% sugli aumenti anche nel 2027

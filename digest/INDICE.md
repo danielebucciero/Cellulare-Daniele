@@ -1,6 +1,7 @@
 # Indice dei digest
 
 <!-- Le nuove righe vanno aggiunte in cima, sotto questo commento -->
+- [2026-11-11](2026/2026-11-11.md) — 4 novità: INPS msg 3649/2026 somma non imponibile su prestazioni; CCNL sorveglianza antincendio; patente a crediti fissi a gennaio; CCNL Funzioni Locali
 - [2026-11-10](2026/2026-11-10.md) — 3 novità: nota INL 2469/2026 patente a crediti; D.Lgs. 179/2026 divieto decisioni automatizzate; Lombardia sanzioni formazione sicurezza
 - [2026-11-09](2026/2026-11-09.md) — 5 novità: Corte cost. 174/2026 licenziamenti piccole imprese; decreto piattaforme digitali dal 2/12; D.Lgs. 179/2026 AI al lavoro; Fondazione Studi digitalizzazione documenti; INPS msg 3601/2026
 - [2026-11-06](2026/2026-11-06.md) — 4 novità: nota INL 2377/2026 formazione neoassunti; SIISL ID posizione in UniEmens; contratti di solidarietà domande 30/11–10/12; circolare INPS 110/2026

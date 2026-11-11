@@ -13,6 +13,7 @@
 ## Annuali
 | Data | Adempimento |
 |---|---|
+| 1–31 gennaio | Patente a crediti: dichiarazione dei crediti aggiuntivi fissi (dal 2027; nota INL n. 2469/2026) |
 | 31 gennaio | Prospetto informativo disabili (L. 68/1999), se dovuto |
 | 16 febbraio | Autoliquidazione INAIL (premio e rata) |
 | 16 marzo | Invio e consegna Certificazione Unica (CU) |

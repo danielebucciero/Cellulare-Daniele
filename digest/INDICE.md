@@ -1,6 +1,7 @@
 # Indice dei digest
 
 <!-- Le nuove righe vanno aggiunte in cima, sotto questo commento -->
+- [2026-11-13](2026/2026-11-13.md) — 4 novità: accordo interconfederale su salari e rappresentanza; esonero 1% conciliazione famiglia-lavoro; 5% sugli arretrati da rinnovo; badge di cantiere
 - [2026-11-12](2026/2026-11-12.md) — 3 novità: interpello 3/2026 stipendi non tracciabili senza diffida; INPS msg 3661/2026 UniEmens e SIISL; CCNL Pelli e Ombrelli
 - [2026-11-11](2026/2026-11-11.md) — 4 novità: INPS msg 3649/2026 somma non imponibile su prestazioni; CCNL sorveglianza antincendio; patente a crediti fissi a gennaio; CCNL Funzioni Locali
 - [2026-11-10](2026/2026-11-10.md) — 3 novità: nota INL 2469/2026 patente a crediti; D.Lgs. 179/2026 divieto decisioni automatizzate; Lombardia sanzioni formazione sicurezza

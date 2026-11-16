@@ -1,6 +1,7 @@
 # Indice dei digest
 
 <!-- Le nuove righe vanno aggiunte in cima, sotto questo commento -->
+- [2026-11-16](2026/2026-11-16.md) — 5 novità: F24 oggi; INPS msg 3706/3691/3697/3694 (UniEmens, domestici, RED, APE sociale); Cassazione 28212/2026 stress lavoro-correlato; correzione scadenze UniEmens/LUL
 - [2026-11-13](2026/2026-11-13.md) — 4 novità: accordo interconfederale su salari e rappresentanza; esonero 1% conciliazione famiglia-lavoro; 5% sugli arretrati da rinnovo; badge di cantiere
 - [2026-11-12](2026/2026-11-12.md) — 3 novità: interpello 3/2026 stipendi non tracciabili senza diffida; INPS msg 3661/2026 UniEmens e SIISL; CCNL Pelli e Ombrelli
 - [2026-11-11](2026/2026-11-11.md) — 4 novità: INPS msg 3649/2026 somma non imponibile su prestazioni; CCNL sorveglianza antincendio; patente a crediti fissi a gennaio; CCNL Funzioni Locali

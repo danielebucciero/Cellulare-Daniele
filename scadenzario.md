@@ -7,7 +7,7 @@
 | Giorno | Adempimento |
 |---|---|
 | 16 | F24: versamento contributi INPS e ritenute IRPEF/addizionali del mese precedente |
-| Fine mese | Invio UniEmens relativo al mese precedente |
+| Fine mese | Invio UniEmens relativo al mese precedente (es. entro fine novembre quello di ottobre) |
 | Fine mese | Elaborazione e consegna LUL relativo al mese precedente |
 
 ## Annuali

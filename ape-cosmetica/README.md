@@ -44,9 +44,10 @@ nastro di raso colorato, paglietta colorata, etichetta tonda "Erboristeria Ape C
 - **Generatore:** `spot/genera_video.py`. Per una nuova campagna basta cambiare foto, prezzi e data (istruzioni in cima al file).
 
 ## Regole da rispettare negli annunci
-- **Messaggio da dare:** invitare a **venire in negozio**. Le confezioni regalo sono **pezzi unici**,
-  distribuiti tra i due negozi, e quelle mostrate sono solo alcune idee: in negozio ce ne sono tante altre.
+- **Messaggio da dare:** invitare a **venire in negozio**. Le confezioni sono distribuite tra i due negozi
+  e quelle mostrate sono solo alcune idee: in negozio ce ne sono tante altre.
   **Non invitare a prenotare** (né su WhatsApp né per telefono): è una scelta del titolare.
+  **Non scrivere "pezzo unico"**: non tutte le confezioni lo sono.
 - **Prezzi:** copiarli sempre dai cartellini in negozio e ricontrollarli. Nel primo video del Black Friday 2026
   c'erano tre prezzi sbagliati.
 - **Sconto in percentuale:** deve essere vero. Si calcola sul prezzo più basso dei 30 giorni precedenti

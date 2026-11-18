@@ -28,19 +28,19 @@ come 29,00→23,10. Il titolare ne è stato informato.
 
 ## Materiali prodotti
 - `2026-black-friday/Ape_Cosmetica_Black_Friday_Reel.mp4`: Reel verticale di 21 secondi, senza audio.
-  Contiene un'apertura animata ("Confezioni regalo uniche, fatte a mano") e 6 confezioni, ognuna con la dicitura
-  "pezzo unico": Mirto, Karité, L'Amande, Latte d'Asina, Corbezzolo e Vaniglia Bianca, quest'ultima senza bollino.
-  Il finale dice "Vieni a trovarci! Queste sono solo alcune idee: in negozio ne trovi tante altre", con logo,
-  indirizzi e orari.
+  Contiene un'apertura animata ("Confezioni regalo fatte a mano") e 6 confezioni: Mirto, Karité, L'Amande,
+  Latte d'Asina, Corbezzolo e Vaniglia Bianca, quest'ultima senza bollino. Il finale dice "Vieni a trovarci!
+  Queste sono solo alcune idee: in negozio ne trovi tante altre – vieni a scoprirle nei nostri negozi",
+  con logo, indirizzi e orari.
 - 18/11: il titolare **non vuole prenotazioni**, quindi il pulsante WhatsApp è stato tolto. Per il Mirto è stata
-  usata la foto con una sola scatola, perché l'altra ne mostrava due uguali.
+  usata la foto con una sola scatola. Poi è stata tolta la dicitura "pezzo unico", perché non tutte le confezioni lo sono.
 - `2026-black-friday/Ape_Cosmetica_Black_Friday_Reel_copertina.jpg`: copertina del Reel.
 - Foto originali in `../spot/foto/2026-black-friday/`.
 - Il video si rigenera con `python3 spot/genera_video.py <uscita.mp4>`.
 
 ## Testo del post proposto
 > 🎁 BLACK FRIDAY da Ape Cosmetica 🎁
-> Le nostre confezioni regalo sono fatte a mano, una per una: ogni confezione è un pezzo unico ✨
+> Le nostre confezioni regalo sono fatte a mano, una per una ✨
 > L'Erbolario, Nature's, Bioearth, L'Amande, Erbe di Sardegna, Latte d'asina… ora fino al -30%! 🌿
 > Queste sono solo alcune idee: in negozio ne trovi tante altre, già pronte da mettere sotto l'albero 🎄
 > ⏳ Solo fino a sabato 28 novembre

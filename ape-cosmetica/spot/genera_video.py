@@ -119,7 +119,7 @@ def price_layer(p):
     d.text((x0, yb), old, font=fo, fill=GREY, anchor="ls")
     d.line((x0 - 6, yb - 20, x0 + wo + 6, yb - 20), fill=RED, width=5)
     d.text((x0 + wo + gap, yb), new, font=fn, fill=GREEN, anchor="ls")
-    ctext(d, 352, "pezzo unico  ·  solo fino a " + FINE_PROMO, it("Medium", 30), RED)
+    ctext(d, 352, "solo fino a " + FINE_PROMO, it("Medium", 30), RED)
     return L
 
 def badge_img(txt):
@@ -190,7 +190,7 @@ def render_intro(t, dur):
     ctext(d, 560 + (1 - a2) * 40, "BLACK", pf(900, 210), A((255, 255, 255), a2))
     ctext(d, 770 + (1 - a2) * 40, "FRIDAY", pf(900, 210), A((255, 255, 255), a2))
     ctext(d, 1020 + (1 - a3) * 30, "naturale", ds(150), A((214, 236, 196), a3))
-    ctext(d, 1240 + (1 - a4) * 30, "Confezioni regalo uniche, fatte a mano", it("Medium", 44), A(CREAM, a4))
+    ctext(d, 1240 + (1 - a4) * 30, "Confezioni regalo fatte a mano", it("Medium", 44), A(CREAM, a4))
     ctext(d, 1306 + (1 - a4) * 30, "fino al -30%", pf(800, 92), A((255, 210, 120), a4))
     fr.alpha_composite(L)
     return fr.convert("RGB")
@@ -212,7 +212,7 @@ def render_outro(t, dur):
     y = 790 + (1 - a[2]) * 30
     ctext(d, y, "Queste sono solo alcune idee:", it("Medium", 38), A(CREAM, a[2]))
     ctext(d, y + 52, "in negozio ne trovi tante altre!", pf(700, 56), A((255, 255, 255), a[2]))
-    ctext(d, y + 138, "ogni confezione è un pezzo unico", it("SemiBold", 34), A((255, 210, 120), a[2]))
+    ctext(d, y + 138, "vieni a scoprirle nei nostri negozi", it("SemiBold", 34), A((255, 210, 120), a[2]))
     y = 1010 + (1 - a[3]) * 30
     d.rounded_rectangle((140, y, W - 140, y + 140), 26, fill=A((255, 210, 120), a[3]))
     ctext(d, y + 24, "BLACK FRIDAY", it("Bold", 32), A(GREEN, a[3]))

@@ -36,7 +36,7 @@ OUT = sys.argv[1] if len(sys.argv) > 1 else "spot.mp4"
 
 # ---------- prodotti (prezzi dai cartellini in negozio) ----------
 P = [
-    dict(img="mirto-calendula.jpg", y0=60, brand="ERBE DI SARDEGNA",
+    dict(img="mirto-calendula.jpg", y0=0, side=2380, brand="ERBE DI SARDEGNA",
          name="Mirto & Calendula", sub="crema mirto · sapone calendula · gommose",
          old="31,00", new="21,50", badge="-30%"),
     dict(img="karite-erbolario.jpg", y0=250, brand="L'ERBOLARIO",
@@ -119,7 +119,7 @@ def price_layer(p):
     d.text((x0, yb), old, font=fo, fill=GREY, anchor="ls")
     d.line((x0 - 6, yb - 20, x0 + wo + 6, yb - 20), fill=RED, width=5)
     d.text((x0 + wo + gap, yb), new, font=fn, fill=GREEN, anchor="ls")
-    ctext(d, 352, "solo fino a " + FINE_PROMO, it("Medium", 30), RED)
+    ctext(d, 352, "pezzo unico  ·  solo fino a " + FINE_PROMO, it("Medium", 30), RED)
     return L
 
 def badge_img(txt):
@@ -134,7 +134,7 @@ def badge_img(txt):
 
 def prep_photo(p):
     im = ImageOps.exif_transpose(Image.open(FOTO + p["img"])).convert("RGB")
-    side = min(im.size); x0 = (im.size[0] - side) // 2; y0 = min(p["y0"], im.size[1] - side)
+    side = p.get("side", min(im.size)); x0 = (im.size[0] - side) // 2; y0 = min(p["y0"], im.size[1] - side)
     im = im.crop((x0, y0, x0 + side, y0 + side))
     big = int(PH * 1.12)
     return im.resize((big, big), Image.LANCZOS)
@@ -190,7 +190,7 @@ def render_intro(t, dur):
     ctext(d, 560 + (1 - a2) * 40, "BLACK", pf(900, 210), A((255, 255, 255), a2))
     ctext(d, 770 + (1 - a2) * 40, "FRIDAY", pf(900, 210), A((255, 255, 255), a2))
     ctext(d, 1020 + (1 - a3) * 30, "naturale", ds(150), A((214, 236, 196), a3))
-    ctext(d, 1240 + (1 - a4) * 30, "Confezioni regalo fatte a mano", it("Medium", 44), A(CREAM, a4))
+    ctext(d, 1240 + (1 - a4) * 30, "Confezioni regalo uniche, fatte a mano", it("Medium", 44), A(CREAM, a4))
     ctext(d, 1306 + (1 - a4) * 30, "fino al -30%", pf(800, 92), A((255, 210, 120), a4))
     fr.alpha_composite(L)
     return fr.convert("RGB")
@@ -208,25 +208,25 @@ def render_outro(t, dur):
         fr.alpha_composite(lg, ((W - 420) // 2, int(150 + (1 - a[0]) * 30)))
     L = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
     def A(c, x): return c + (int(255 * x),)
-    ctext(d, 600 + (1 - a[1]) * 30, "Ti aspettiamo!", ds(120), A((214, 236, 196), a[1]))
+    ctext(d, 600 + (1 - a[1]) * 30, "Vieni a trovarci!", ds(116), A((214, 236, 196), a[1]))
     y = 790 + (1 - a[2]) * 30
-    d.rounded_rectangle((140, y, W - 140, y + 140), 26, fill=A((255, 210, 120), a[2]))
-    ctext(d, y + 24, "BLACK FRIDAY", it("Bold", 32), A(GREEN, a[2]))
-    ctext(d, y + 66, "fino a " + FINE_PROMO, pf(700, 48), A(GREEN, a[2]))
-    y = 980 + (1 - a[3]) * 30
-    ctext(d, y, "Viale Aldo Moro 215", pf(600, 56), A((255, 255, 255), a[3]))
-    ctext(d, y + 72, "Corso Umberto 153", pf(600, 56), A((255, 255, 255), a[3]))
-    ctext(d, y + 152, "Olbia  ·  lun–sab  9.00–13.15  ·  15.30–19.30", it("Medium", 32), A(CREAM, a[3]))
-    y = 1250 + (1 - a[4]) * 30
-    d.rounded_rectangle((170, y, W - 170, y + 110), 55, fill=A((37, 211, 102), a[4]))
-    ctext(d, y + 55, "Prenota su WhatsApp", it("Bold", 42), A((255, 255, 255), a[4]), anchor="mm")
-    ctext(d, y + 136, "393 918 7689", pf(700, 60), A((255, 255, 255), a[4]))
+    ctext(d, y, "Queste sono solo alcune idee:", it("Medium", 38), A(CREAM, a[2]))
+    ctext(d, y + 52, "in negozio ne trovi tante altre!", pf(700, 56), A((255, 255, 255), a[2]))
+    ctext(d, y + 138, "ogni confezione è un pezzo unico", it("SemiBold", 34), A((255, 210, 120), a[2]))
+    y = 1010 + (1 - a[3]) * 30
+    d.rounded_rectangle((140, y, W - 140, y + 140), 26, fill=A((255, 210, 120), a[3]))
+    ctext(d, y + 24, "BLACK FRIDAY", it("Bold", 32), A(GREEN, a[3]))
+    ctext(d, y + 66, "fino a " + FINE_PROMO, pf(700, 48), A(GREEN, a[3]))
+    y = 1210 + (1 - a[4]) * 30
+    ctext(d, y, "Viale Aldo Moro 215", pf(600, 56), A((255, 255, 255), a[4]))
+    ctext(d, y + 72, "Corso Umberto 153", pf(600, 56), A((255, 255, 255), a[4]))
+    ctext(d, y + 152, "Olbia  ·  lun–sab  9.00–13.15  ·  15.30–19.30", it("Medium", 32), A(CREAM, a[4]))
     ctext(d, 1500 + (1 - a[5]) * 30, "apecosmetica.com", it("SemiBold", 38), A((214, 236, 196), a[5]))
     fr.alpha_composite(L)
     return fr.convert("RGB")
 
 # ---------- timeline ----------
-segs = [("intro", None, 2.8)] + [("slide", i, 2.7) for i in range(len(P))] + [("outro", None, 4.2)]
+segs = [("intro", None, 2.8)] + [("slide", i, 2.7) for i in range(len(P))] + [("outro", None, 5.0)]
 XF = 0.35
 starts = []; t0 = 0
 for s in segs:

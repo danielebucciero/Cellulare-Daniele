@@ -38,12 +38,15 @@ nastro di raso colorato, paglietta colorata, etichetta tonda "Erboristeria Ape C
 - **Colori:** verde scuro `#264634`, verde `#3E684A`, crema `#F7F1E6`, pois kraft `#D6C4A8`,
   rosso `#C42626` per i bollini, giallo caldo `#FFD278` per gli evidenziati.
 - **Font** (in `spot/font/`, licenza SIL OFL): Playfair Display (titoli e prezzi),
-  Dancing Script ("Erboristeria", "naturale", "Ti aspettiamo!"), Inter (testi piccoli).
+  Dancing Script ("Erboristeria", "naturale", "Vieni a trovarci!"), Inter (testi piccoli).
 - **Formato:** verticale 1080×1920 per Reel e Storie. Testi tra circa 250 e 1600 px di altezza, così i pulsanti
   di Instagram non li coprono. Video senza audio: la musica si aggiunge da Instagram.
 - **Generatore:** `spot/genera_video.py`. Per una nuova campagna basta cambiare foto, prezzi e data (istruzioni in cima al file).
 
 ## Regole da rispettare negli annunci
+- **Messaggio da dare:** invitare a **venire in negozio**. Le confezioni regalo sono **pezzi unici**,
+  distribuiti tra i due negozi, e quelle mostrate sono solo alcune idee: in negozio ce ne sono tante altre.
+  **Non invitare a prenotare** (né su WhatsApp né per telefono): è una scelta del titolare.
 - **Prezzi:** copiarli sempre dai cartellini in negozio e ricontrollarli. Nel primo video del Black Friday 2026
   c'erano tre prezzi sbagliati.
 - **Sconto in percentuale:** deve essere vero. Si calcola sul prezzo più basso dei 30 giorni precedenti

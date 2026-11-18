@@ -28,19 +28,23 @@ come 29,00→23,10. Il titolare ne è stato informato.
 
 ## Materiali prodotti
 - `2026-black-friday/Ape_Cosmetica_Black_Friday_Reel.mp4`: Reel verticale di 21 secondi, senza audio.
-  Contiene un'apertura animata, 6 confezioni (Mirto, Karité, L'Amande, Latte d'Asina, Corbezzolo,
-  Vaniglia Bianca senza bollino) e un finale con logo, indirizzi, orari e WhatsApp.
+  Contiene un'apertura animata ("Confezioni regalo uniche, fatte a mano") e 6 confezioni, ognuna con la dicitura
+  "pezzo unico": Mirto, Karité, L'Amande, Latte d'Asina, Corbezzolo e Vaniglia Bianca, quest'ultima senza bollino.
+  Il finale dice "Vieni a trovarci! Queste sono solo alcune idee: in negozio ne trovi tante altre", con logo,
+  indirizzi e orari.
+- 18/11: il titolare **non vuole prenotazioni**, quindi il pulsante WhatsApp è stato tolto. Per il Mirto è stata
+  usata la foto con una sola scatola, perché l'altra ne mostrava due uguali.
 - `2026-black-friday/Ape_Cosmetica_Black_Friday_Reel_copertina.jpg`: copertina del Reel.
 - Foto originali in `../spot/foto/2026-black-friday/`.
 - Il video si rigenera con `python3 spot/genera_video.py <uscita.mp4>`.
 
 ## Testo del post proposto
 > 🎁 BLACK FRIDAY da Ape Cosmetica 🎁
-> Le nostre confezioni regalo fatte a mano, con L'Erbolario, Nature's, Bioearth, L'Amande, Erbe di Sardegna e Latte d'asina, ora fino al -30%! 🌿
-> Un pensiero naturale per tutti, già pronto da mettere sotto l'albero 🎄
+> Le nostre confezioni regalo sono fatte a mano, una per una: ogni confezione è un pezzo unico ✨
+> L'Erbolario, Nature's, Bioearth, L'Amande, Erbe di Sardegna, Latte d'asina… ora fino al -30%! 🌿
+> Queste sono solo alcune idee: in negozio ne trovi tante altre, già pronte da mettere sotto l'albero 🎄
 > ⏳ Solo fino a sabato 28 novembre
-> 📍 Viale Aldo Moro 215 e Corso Umberto 153, Olbia
-> 💬 Prenota la tua confezione su WhatsApp e passa a ritirarla
+> 📍 Vieni a trovarci in Viale Aldo Moro 215 e in Corso Umberto 153, Olbia
 > #Olbia #Erboristeria #BlackFriday #RegaliDiNatale #CosmesiNaturale #ErbeDiSardegna #LErbolario
 
 **Quando pubblicare:** il Reel giovedì 26 sera o venerdì 27 mattina, la Storia "ultimo giorno" sabato 28 mattina.

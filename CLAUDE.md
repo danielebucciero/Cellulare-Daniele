@@ -23,6 +23,13 @@ Quando ti viene chiesto di generare il digest:
 7. Aggiorna `digest/INDICE.md` aggiungendo in cima una riga: `- [AAAA-MM-GG](AAAA/AAAA-MM-GG.md) — N novità: titoli brevi`.
 8. Fai commit con messaggio `Digest AAAA-MM-GG` e push sul branch `main`.
 
+## Cartella `ape-cosmetica/`
+
+È separata dall'osservatorio: contiene scheda, campagne pubblicitarie e generatore di video per
+l'Erboristeria Ape Cosmetica di Olbia. Se la richiesta riguarda l'erboristeria, spot, post social o
+il sito apecosmetica.com, leggi prima `ape-cosmetica/README.md` e i file in `ape-cosmetica/campagne/`.
+Le istruzioni sul digest non si applicano a questa cartella.
+
 ## Regole
 
 - Non inventare numeri di circolari, date o importi: se non sei sicuro, scrivi "da verificare" e cita la fonte.

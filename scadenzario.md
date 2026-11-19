@@ -21,3 +21,8 @@
 | 31 ottobre | Modello 770 |
 | 16 dicembre | Imposta sostitutiva rivalutazione TFR (saldo a febbraio) |
 | Dicembre | Conguaglio fiscale di fine anno |
+
+## Scadenze una tantum da ricordare
+| Data | Adempimento |
+|---|---|
+| 1 gennaio 2027 | Avvio dell'anticipazione del 50% IPCA-NEI per i CCNL privati già scaduti prima del D.L. 62/2026 (art. 10; da verificare sul testo) |

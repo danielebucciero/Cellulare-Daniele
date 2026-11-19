@@ -2,8 +2,9 @@
 
 Racconto: apertura -> 3 ingredienti (ognuno "vola" nel vassoio in basso) -> incarto animato con carta kraft,
 nastro e fiocco -> foto della confezione finita -> finale con logo e indirizzi.
-Uso:  python3 reel_confezione.py <file_uscita.mp4>   (Pillow + ffmpeg). Salva anche <uscita>_copertina.jpg.
-Per riusarlo: cambiare FOTO_DIR, PASSI (foto, ritaglio y0, testi) e FINALE.
+Uso:  python3 reel_confezione.py <nome_confezione> <file_uscita.mp4>   (Pillow + ffmpeg).
+Salva anche <uscita>_copertina.jpg. Confezioni disponibili: vedi CONFEZIONI (tisane, dattero).
+Per una nuova confezione: aggiungere una voce a CONFEZIONI e le foto in foto/<foto_dir>/.
 Regole di comunicazione: ../README.md (niente prenotazioni, niente "pezzo unico", niente claim sulla salute).
 """
 import os, subprocess, sys, math
@@ -12,10 +13,7 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps, ImageEnhance
 W, H, FPS = 1080, 1920, 30
 BASE = os.path.dirname(os.path.abspath(__file__))
 FONT = os.path.join(BASE, "font") + os.sep
-FOTO_DIR = os.path.join(BASE, "foto", "2026-11-confezione-tisane") + os.sep
 LOGO_PATH = os.path.join(BASE, "logo.png")
-OUT = sys.argv[1] if len(sys.argv) > 1 else "reel.mp4"
-
 def pf(w, s): return ImageFont.truetype(FONT + "playfair-display-latin-%d-normal.woff" % w, s)
 def ds(s): return ImageFont.truetype(FONT + "dancing-script-latin-700-normal.woff", s)
 def it(w, s): return ImageFont.truetype(FONT + "inter-latin-%d-normal.woff" % {"Regular": 400, "Medium": 500, "SemiBold": 600, "Bold": 700}[w], s)
@@ -24,17 +22,35 @@ CREAM, DOT = (247, 241, 230), (214, 196, 168)
 GREEN, GREEN2, GDOT = (38, 70, 52), (62, 104, 74), (52, 88, 64)
 GREY, LIGHT, YELLOW = (120, 112, 100), (214, 236, 196), (255, 210, 120)
 KRAFT, KDOT = (200, 165, 122), (150, 112, 78)
-PINK, PINK_D = (236, 150, 196), (196, 96, 150)
-
-# ---------- contenuti ----------
-PASSI = [  # foto (una o due), y0 del ritaglio 4:5, numero, etichetta, titolo, sottotitolo
-    (["tisaniera.jpg", "tisaniera-filtro.jpg"], [140, 80], "1", "LA TAZZA", "Tisaniera Neavita", "con filtro in acciaio e coperchio"),
-    (["infuso-fiocchi-di-neve.jpg"], [60], "2", "L'INFUSO", "Fiocchi di Neve", "mela, ibisco, cannella, mandorle e pepe rosa"),
-    (["miele-millefiori.jpg"], [60], "3", "IL MIELE", "Miele di Sardegna", "Millefiori · Apicoltura Derosas"),
-]
-INCARTO = ("4", "IL TOCCO FINALE", "Nastro e fiocco", "la confezioniamo a mano, in negozio")
-FINALE = ("confezione-finita.jpg", 40, "ECCO IL RISULTATO", "Pronta da regalare!",
-          "nella foto: tazza, miele di Sardegna e tisane Neavita", "23,50 €")
+# ---------- contenuti: una voce per ogni confezione ----------
+# passi: foto (una o due), y0 del ritaglio 4:5, numero, etichetta, titolo, sottotitolo
+# coperchio: None = carta kraft a pois che si chiude; oppure (foto, (x0, y0, x1, y1)) = coperchio vero che scende
+CONFEZIONI = {
+    "tisane": dict(
+        foto_dir="2026-11-confezione-tisane",
+        passi=[(["tisaniera.jpg", "tisaniera-filtro.jpg"], [140, 80], "1", "LA TAZZA", "Tisaniera Neavita", "con filtro in acciaio e coperchio"),
+               (["infuso-fiocchi-di-neve.jpg"], [60], "2", "L'INFUSO", "Fiocchi di Neve", "mela, ibisco, cannella, mandorle e pepe rosa"),
+               (["miele-millefiori.jpg"], [60], "3", "IL MIELE", "Miele di Sardegna", "Millefiori · Apicoltura Derosas")],
+        incarto=("4", "IL TOCCO FINALE", "Nastro e fiocco", "la confezioniamo a mano, in negozio"),
+        coperchio=None, nastro=((236, 150, 196), (196, 96, 150)),
+        finale=("confezione-finita.jpg", 40, "ECCO IL RISULTATO", "Pronta da regalare!",
+                "nella foto: tazza, miele di Sardegna e tisane Neavita", "23,50 €")),
+    "dattero": dict(
+        foto_dir="2026-11-confezione-dattero",
+        passi=[(["bagnoschiuma.jpg"], [(150, 220, 1270, 1620)], "1", "IL BAGNOSCHIUMA", "Bagnoschiuma", "L'Erbolario Nettare di Dattero · 250 ml"),
+               (["crema-corpo.jpg"], [20], "2", "LA CREMA", "Crema Fluida Corpo", "L'Erbolario Nettare di Dattero · 200 ml"),
+               (["profumo.jpg"], [(270, 480, 1190, 1630)], "3", "IL PROFUMO", "Profumo", "L'Erbolario Nettare di Dattero · 15 ml")],
+        incarto=("4", "IL TOCCO FINALE", "Scatola e fiocco", "la confezioniamo a mano, in negozio"),
+        coperchio=("scatola-erbolario.jpg", (250, 370, 1310, 1695)), nastro=((104, 118, 70), (66, 78, 42)),
+        finale=("confezione-finita.jpg", 40, "ECCO IL RISULTATO", "Pronta da regalare!",
+                "bagnoschiuma, crema corpo e profumo 15 ml", "57,50 €")),
+}
+NOME = sys.argv[1] if len(sys.argv) > 1 else "tisane"
+OUT = sys.argv[2] if len(sys.argv) > 2 else "reel_%s.mp4" % NOME
+CFG = CONFEZIONI[NOME]
+FOTO_DIR = os.path.join(BASE, "foto", CFG["foto_dir"]) + os.sep
+PASSI, INCARTO, FINALE = CFG["passi"], CFG["incarto"], CFG["finale"]
+PINK, PINK_D = CFG["nastro"]
 TIMELINE = [("intro", None, 3.0), ("passo", 0, 3.6), ("passo", 1, 3.0), ("passo", 2, 2.9),
             ("incarto", None, 3.0), ("finale", None, 3.6), ("outro", None, 4.4)]
 XF = 0.35
@@ -67,6 +83,8 @@ def shadow(w, h, r, blur=28):
 
 def load(name, y0, w, h):
     im = ImageOps.exif_transpose(Image.open(FOTO_DIR + name)).convert("RGB")
+    if isinstance(y0, tuple):  # ritaglio esplicito (x0, y0, x1, y1), in proporzione 4:5
+        return im.crop(y0)
     cw = im.size[0]; ch = int(cw * h / w); y0 = min(y0, im.size[1] - ch)
     return im.crop((0, y0, cw, y0 + ch))
 
@@ -134,7 +152,7 @@ def card_frame(fr, img):
     ImageDraw.Draw(fr).rounded_rectangle((CX, CY, CX + CW, CY + CH), RAD, outline=(255, 255, 255), width=8)
 
 # ---------- fiocco ----------
-def make_bow(size):
+def make_bow(size, PINK=PINK, PINK_D=PINK_D):
     S = size * 3; B = Image.new("RGBA", (S, S), (0, 0, 0, 0)); d = ImageDraw.Draw(B)
     c = S // 2
     for sgn in (-1, 1):  # code
@@ -148,7 +166,12 @@ def make_bow(size):
     d.ellipse((c - S * 0.075, c - S * 0.085, c + S * 0.075, c + S * 0.065), fill=PINK_D)
     return B.resize((size, size), Image.LANCZOS)
 BOW = make_bow(330)
+BOW_INTRO = make_bow(330, (255, 210, 120), (200, 150, 60))  # fiocco chiaro sul fondo verde
 PAPER = dots(CW, CH, KRAFT, KDOT, step=58, r=7).convert("RGBA")
+LID = None
+if CFG["coperchio"]:
+    _l = ImageOps.exif_transpose(Image.open(FOTO_DIR + CFG["coperchio"][0])).convert("RGB")
+    LID = _l.crop(CFG["coperchio"][1]).resize((CW, CH), Image.LANCZOS).convert("RGBA")
 
 def wrapped_card(t):
     """Contenuto della card durante l'incarto: ingredienti sulla paglietta -> carta che si chiude -> nastro -> fiocco."""
@@ -161,7 +184,9 @@ def wrapped_card(t):
     for k in range(3):
         C.alpha_composite(thumb_img(k, big), pos[k])
     e = ease_io((t - 0.75) / 0.7)  # carta
-    if e > 0:
+    if e > 0 and LID is not None:   # il coperchio vero scende dall'alto
+        C.alpha_composite(LID, (0, int(-CH + CH * e)))
+    elif e > 0:
         half = CW // 2
         C.alpha_composite(PAPER.crop((0, 0, half + 4, CH)), (int(-half - 4 + (half + 4) * e), 0))
         C.alpha_composite(PAPER.crop((half - 4, 0, CW, CH)), (int(CW - (half + 4) * e), 0))
@@ -186,7 +211,7 @@ def render_intro(t, dur):
     fr.alpha_composite(L)
     b = ease_back((t - 1.4) / 0.5)
     if t > 1.4 and b > 0.02:
-        s = max(1, int(330 * b)); bw = BOW.resize((s, s), Image.BICUBIC)
+        s = max(1, int(330 * b)); bw = BOW_INTRO.resize((s, s), Image.BICUBIC)
         fr.alpha_composite(bw, (W // 2 - s // 2, 1240 - s // 2 + 120))
     return fr.convert("RGB")
 

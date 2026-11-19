@@ -1,7 +1,7 @@
 # Reel "Come nasce una confezione regalo" – novembre 2026
 
 Creato il 19/11/2026 da 5 foto del titolare, che si trovano in `spot/foto/2026-11-confezione-tisane/`.
-Si rigenera con `python3 spot/reel_confezione.py <uscita.mp4>`.
+Si rigenera con `python3 spot/reel_confezione.py tisane <uscita.mp4>`.
 I file prodotti sono in `2026-11-confezione-tisane/`: il Reel (verticale, circa 21 secondi, senza audio) e la copertina.
 
 ## Prodotti nelle foto

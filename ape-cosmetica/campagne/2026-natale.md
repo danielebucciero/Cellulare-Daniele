@@ -44,29 +44,35 @@ Ogni settimana una confezione protagonista. Questa del latte d'asina apre la ser
 
 ---
 
-## Reel – mercoledì 2 dicembre (IG + FB)
-**Durata:** 20 secondi, verticale 1080×1920, senza audio (musica da Instagram).
+## Reel – mercoledì 2 dicembre (IG + FB) – FATTO
+**File:** `2026-natale/Ape_Cosmetica_Natale_Latte_Asina_Reel.mp4` (18 secondi, 1080×1920, senza audio)
+e la copertina `2026-natale/Ape_Cosmetica_Natale_Latte_Asina_Reel_copertina.jpg`.
+Si rigenera con `python3 spot/genera_video_natale.py <uscita.mp4>`. La foto è in `spot/foto/2026-natale/`.
 
-1. **0–2 s** – Primo piano del fiocco verde che si scioglie. Testo: *"Un regalo che non finisce nel cestino"*.
-2. **2–6 s** – Mano che apre la scatola, inquadratura dall'alto. Testo: *"Latte d'asina · Delicato d'Asina"*.
-3. **6–10 s** – Dettaglio dello struccante solido aperto. Testo: *"Struccante solido con burro di karité"*.
-4. **10–14 s** – La saponetta scrub che entra nel sacchetto di sisal. Testo: *"Doccia scrub solido + sacchetto in sisal"*.
-5. **14–17 s** – Scatola richiusa sul banco, luce calda. Testo: *"Confezionato a mano in negozio"*.
-6. **17–20 s** – Finale con logo e indirizzi. Testo: *"Vieni a scoprire le altre confezioni"*.
+Nel video c'è una sola foto, mostrata in 4 inquadrature. Il cartellino Black Friday resta sempre fuori e non c'è nessun prezzo.
+1. **Apertura** (verde, neve che scende): *"Il Natale si incarta a mano"*, poi *"Un regalo che coccola anche la pelle"*.
+2. **Confezione intera**: "Delicato d'Asina · Latte d'Asina · la confezione regalo", con la scritta *"confezionata a mano in negozio"*.
+3. **Struccante**: "Struccante solido viso · al latte d'asina · con burro di karité", con la scritta *"delicato · rivitalizzante"*.
+4. **Doccia scrub**: "Doccia schiuma solido scrub · al latte d'asina · nutriente · naturale", con la scritta *"niente flacone, solo il panetto"*.
+5. **Sacchetto**: "Sacchetto 100% sisal · per sapone e detergenti solidi", con la scritta *"per usarli fino all'ultimo pezzetto"*.
+6. **Finale**: logo, *"Vieni a trovarci! Questa è solo una delle nostre idee: in negozio ne trovi tante altre"*,
+   "Buone Feste", indirizzi, orari, apecosmetica.com.
 
-**Musica:** un brano natalizio acustico (chitarra o carillon), niente cori.
+Abbiamo scartato la frase "un regalo che non finisce nel cestino": è un'affermazione ambientale difficile
+da dimostrare, perché scatola e paglietta si buttano.
+
+**Musica:** da Instagram, un brano natalizio acustico (chitarra o carillon), niente cori.
 
 **Caption:**
-> Un regalo che si usa fino all'ultimo pezzetto 🎁
+> Un regalo da usare fino all'ultimo pezzetto 🎁
 > Struccante solido e doccia scrub al latte d'asina, con il sacchetto in sisal per conservarli.
 > Niente flacone, tanta cura per la pelle.
 > È solo una delle confezioni che prepariamo a mano: le altre ti aspettano in negozio.
 > 📍 Viale Aldo Moro 215 e Corso Umberto 153, Olbia
 >
-> #Olbia #Sardegna #ErboristeriaOlbia #RegaliDiNatale #LatteDAsina #CosmesiSolida #CosmesiNaturale #NataleSostenibile
+> #Olbia #Sardegna #ErboristeriaOlbia #RegaliDiNatale #LatteDAsina #CosmesiSolida #CosmesiNaturale #IdeeRegalo
 
-Il video si può fare con `spot/genera_video.py` usando la foto senza cartellino e cambiando i testi
-(nessun prezzo barrato).
+**Orari nel finale:** quelli normali (lun–sab 9.00–13.15 e 15.30–19.30). Se a dicembre cambiano, si correggono in `render_outro`.
 
 ## Post Instagram – lunedì 30 novembre
 > Il Natale, da noi, si incarta a mano.

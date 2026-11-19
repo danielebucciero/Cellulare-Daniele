@@ -57,3 +57,10 @@ nastro di raso colorato, paglietta colorata, etichetta tonda "Erboristeria Ape C
 - **Claim:** su cosmetici, tisane e integratori niente promesse terapeutiche ("cura", "guarisce").
   Usare "aiuta", "nutre", "coccola".
 - **Foto:** controllare che nei vetri o nelle finestre delle scatole non ci siano riflessi di persone.
+
+## Musica dei Reel
+- `spot/musica_natale.py` compone e sintetizza una **musica natalizia originale**, senza diritti di terzi:
+  campanelle, arpa, accordi morbidi e sonagli, in Re maggiore a 96 bpm, a circa -14 LUFS.
+- `python3 spot/musica_natale.py --monta <video.mp4> <video_con_musica.mp4>` crea la musica della durata
+  giusta e la monta nel video.
+- In alternativa la musica si aggiunge da Instagram. In quel caso usare il video senza audio, per non sovrapporre due tracce.

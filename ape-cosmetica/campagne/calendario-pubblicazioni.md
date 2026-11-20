@@ -29,18 +29,20 @@ Pubblicare come Reel su Instagram attivando "Condividi su Facebook".
 ## sab 21/11 – Black Friday
 - Video: `2026-black-friday/Ape_Cosmetica_Black_Friday_Reel_musica.mp4`
 - Copertina: `2026-black-friday/Ape_Cosmetica_Black_Friday_Reel_copertina.jpg`
+- Testo rifatto il 20/11 su richiesta del titolare. Il messaggio è che da noi ci sono tre vantaggi insieme: gli
+  sconti L'Erbolario (gli stessi del Black Friday nazionale), altri prodotti scontati e le confezioni regalo scontate.
 
-> 🎁 BLACK FRIDAY da Ape Cosmetica 🎁
-> Le nostre confezioni regalo sono fatte a mano, una per una ✨
-> L'Erbolario, Nature's, Bioearth, L'Amande, Erbe di Sardegna, Latte d'asina… ora fino al -30%! 🌿
-> Queste sono solo alcune idee: in negozio ne trovi tante altre, già pronte da mettere sotto l'albero 🎄
-> ⏳ Solo fino a sabato 28 novembre
-> 📍 Vieni a trovarci in Viale Aldo Moro 215 e in Corso Umberto 153, Olbia
-> #Olbia #Erboristeria #BlackFriday #RegaliDiNatale #CosmesiNaturale #ErbeDiSardegna #LErbolario
-
-Righe da aggiungere (confermate dal titolare il 20/11), prima dell'ultima riga con gli indirizzi:
-> E in più, dal 21 al 28 novembre, il Black Friday L'Erbolario anche nei nostri negozi: sconti fino al 50% su una selezione di prodotti delle linee Frangipani, Ginepro Nero, Iris Bianco e Acido Ialuronico, fino a esaurimento scorte.
-> Scegli i prodotti in promo e noi te li confezioniamo, pronti da regalare 🎀
+> 🖤 BLACK FRIDAY da Ape Cosmetica – dal 21 al 28 novembre 🖤
+>
+> 🌿 Black Friday L'Erbolario anche nei nostri negozi, con gli stessi sconti: fino al -50% su una selezione delle linee Frangipani, Ginepro Nero, Iris Bianco, Acido Ialuronico e tante altre.
+>
+> ✨ E non è tutto: da noi trovi in sconto anche tanti altri prodotti selezionati di cosmesi naturale, tisane e benessere.
+>
+> 🎁 E poi le nostre confezioni regalo, fatte a mano una per una: fino al -30%, già pronte da mettere sotto l'albero. Oppure scegli tu i prodotti e noi te li confezioniamo.
+>
+> ⏳ Solo fino a sabato 28 novembre, fino a esaurimento scorte
+> 📍 Viale Aldo Moro 215 e Corso Umberto 153 – Olbia
+> #Olbia #ErboristeriaOlbia #BlackFriday #LErbolario #ConfezioniRegalo #RegaliDiNatale #CosmesiNaturale
 
 ## lun 23/11 – Inizia a pensare ai regali
 - Video: `2026-11-regali-per-tempo/Ape_Cosmetica_Regali_Per_Tempo_Reel_musica.mp4`

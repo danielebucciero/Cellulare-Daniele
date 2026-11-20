@@ -1,6 +1,7 @@
 # Indice dei digest
 
 <!-- Le nuove righe vanno aggiunte in cima, sotto questo commento -->
+- [2026-11-20](2026/2026-11-20.md) — 3 novità: dettagli CCNL Pelli e Alimentare-Panificazione; trattative sanità privata, porti, credito; INPS circ. 113/2026
 - [2026-11-19](2026/2026-11-19.md) — 5 novità: art. 10 DL 62/2026 decorrenze anticipazione IPCA; sgravi contratti di solidarietà 30/11–10/12; interpello 5/2026 Terzo settore; INPS circ. 111 ex ILVA; CCNL Chimica Unilavoro PMI
 - [2026-11-18](2026/2026-11-18.md) — 5 novità: anticipazione IPCA per CCNL scaduti da 9 mesi; preintesa rinnovi dal 2027; CCNL Alimentare e Panificazione; CCNL Comunicazione artigiani; INPS circ. 111/2026 ex ILVA
 - [2026-11-17](2026/2026-11-17.md) — 5 novità: D.Lgs. 208/2026 piattaforme in GU (dal 2/12); INPS msg 3706 congedo alternativo; DM 94/2026 costo lavoro metalmeccanico; numero antitratta 1577; emendamenti Manovra

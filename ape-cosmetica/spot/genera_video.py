@@ -53,7 +53,7 @@ P = [
          old="29,00", new="23,20", badge="-20%"),
     dict(img="vaniglia-bianca.jpg", y0=0, brand="NATURE'S",
          name="Vaniglia Bianca", sub="eau de toilette · crema corpo",
-         old="52,00", new="41,60", badge="-20%"),   # 20/11: il titolare indica -20% (prima il cartellino diceva 36,50)
+         old="52,00", new="36,50", badge="-30%"),   # 20/11: confermato dal titolare -30%, come il cartellino
 ]
 
 def dots_bg(color=CREAM, dot=KRAFT_DOT, step=64, r=6, alpha=None):

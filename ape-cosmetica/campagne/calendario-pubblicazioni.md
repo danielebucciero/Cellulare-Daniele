@@ -31,7 +31,7 @@ Pubblicare come Reel su Instagram attivando "Condividi su Facebook".
 - Video: `2026-black-friday/Ape_Cosmetica_Black_Friday_Reel_musica.mp4`
 - Copertina: `2026-black-friday/Ape_Cosmetica_Black_Friday_Reel_copertina.jpg` (le scritte sono visibili anche dal primo fotogramma)
 - Video aggiornato il 20/11: apertura "Black Friday dal 21 al 28 novembre", scena L'Erbolario fino al -50% (foto dello scaffale), scena "E non è tutto… tanti altri prodotti in sconto + confezioni regalo fino al -30%", poi le confezioni e il finale. Durata circa 26 secondi.
-- [DA CONFERMARE] Vaniglia Bianca (Nature's): bollino -20% (52,00 → 41,60) oppure -30% (52,00 → 36,50, come il cartellino in foto). Lo script ora usa -20%.
+- Vaniglia Bianca (Nature's): bollino -30% (52,00 → 36,50), confermato dal titolare il 20/11.
 - Testo rifatto il 20/11 su richiesta del titolare. Il messaggio è che da noi ci sono tre vantaggi insieme: gli
   sconti L'Erbolario (gli stessi del Black Friday nazionale), altri prodotti scontati e le confezioni regalo scontate.
 

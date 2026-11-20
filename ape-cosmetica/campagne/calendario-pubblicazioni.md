@@ -15,7 +15,8 @@ Pubblicare come Reel su Instagram attivando "Condividi su Facebook".
 
 | Data | Ora invio | Contenuto | Stato |
 |---|---|---|---|
-| sab 21/11 | 19:00 | **Black Friday** (le nostre confezioni fino al -30%) | da pubblicare |
+| **ven 20/11** | — | **Reel Black Friday** (L'Erbolario -50%, altri prodotti, confezioni -30%): inviato alle 11, programmato dal titolare per la sera | programmato |
+| sab 21/11 | 8:30 | Storia "Da oggi è Black Friday" (ricondividere il Reel) | da pubblicare |
 | lun 23/11 | 19:00 | Inizia a pensare ai regali (scegli la fragranza L'Erbolario) | da pubblicare |
 | mer 25/11 | 19:00 | Confezione Nettare di Dattero | da pubblicare |
 | gio 26/11 | 19:00 | Regali che scaldano (tazza e tisana scelte dagli scaffali) | da pubblicare |
@@ -26,9 +27,10 @@ Pubblicare come Reel su Instagram attivando "Condividi su Facebook".
 
 ---
 
-## sab 21/11 – Black Friday
+## ven 20/11 – Black Friday (anticipato: inviato il 20 alle 11, programmato per la sera)
 - Video: `2026-black-friday/Ape_Cosmetica_Black_Friday_Reel_musica.mp4`
-- Copertina: `2026-black-friday/Ape_Cosmetica_Black_Friday_Reel_copertina.jpg`
+- Copertina: `2026-black-friday/Ape_Cosmetica_Black_Friday_Reel_copertina.jpg` (le scritte sono visibili anche dal primo fotogramma)
+- Video aggiornato il 20/11: apertura "Black Friday dal 21 al 28 novembre", scena L'Erbolario fino al -50% (foto dello scaffale), scena "E non è tutto… tanti altri prodotti in sconto + confezioni regalo fino al -30%", poi le confezioni e il finale. Durata circa 26 secondi.
 - Testo rifatto il 20/11 su richiesta del titolare. Il messaggio è che da noi ci sono tre vantaggi insieme: gli
   sconti L'Erbolario (gli stessi del Black Friday nazionale), altri prodotti scontati e le confezioni regalo scontate.
 

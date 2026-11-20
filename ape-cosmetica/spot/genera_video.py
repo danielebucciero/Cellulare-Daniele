@@ -179,19 +179,68 @@ def render_slide(i, t, dur):
             fr.alpha_composite(b, (cx - b.size[0] // 2, cy - b.size[1] // 2))
     return fr.convert("RGB")
 
+# ---------- scena Black Friday L'Erbolario ----------
+_sc = ImageOps.exif_transpose(Image.open(os.path.join(BASE, "foto", "2026-11-scaffale-erbolario", "scaffale.jpg"))).convert("RGB")
+ERB = _sc.crop((0, 0, _sc.size[0], _sc.size[0])).resize((int(PH * 1.12), int(PH * 1.12)), Image.LANCZOS)
+ERB_BADGE = badge_img("-50%")
+def erb_text():
+    L = Image.new("RGBA", (W, 640), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
+    ctext(d, 10, "BLACK FRIDAY L'ERBOLARIO", it("Bold", 32), GREEN2)
+    ctext(d, 52, "fino al -50%", pf(900, 120), GREEN)
+    ctext(d, 200, "con gli stessi sconti anche nei nostri negozi", it("Medium", 34), GREY)
+    ctext(d, 252, "Frangipani · Ginepro Nero · Iris Bianco · Acido Ialuronico", it("Regular", 30), GREY)
+    ctext(d, 300, "e tante altre linee", it("Regular", 30), GREY)
+    ctext(d, 352, "dal 21 al 28 novembre · fino a esaurimento scorte", it("Medium", 30), RED)
+    return L
+ERB_TXT = erb_text()
+def render_erbolario(t, dur):
+    fr = BG.copy().convert("RGBA")
+    fr.alpha_composite(SH, (PX - SHPAD, PY - SHPAD))
+    k = t / dur; z = 1.12 - 0.10 * k; S = ERB.size[0]; cs = int(S / z)
+    ph = ERB.crop(((S - cs) // 2, 0, (S - cs) // 2 + cs, cs)).resize((PH, PH), Image.BILINEAR)
+    fr.paste(ph, (PX, PY), MASK)
+    ImageDraw.Draw(fr).rounded_rectangle((PX, PY, PX + PH, PY + PH), RAD, outline=(255, 255, 255), width=8)
+    fr.alpha_composite(HEADER)
+    fo = max(0.0, min(1.0, (dur - XF - t) / 0.25)); e = ease((t - 0.35) / 0.5) * fo
+    if e > 0:
+        lay = ERB_TXT.copy(); lay.putalpha(lay.getchannel("A").point(lambda v: int(v * e)))
+        fr.alpha_composite(lay, (0, int(PY + PH + 42 + (1 - ease((t - 0.35) / 0.5)) * 60)))
+    e2 = ease_back((t - 0.55) / 0.45) * fo
+    if t > 0.55 and e2 > 0.02:
+        sz = max(1, int(230 * e2)); b = ERB_BADGE.resize((sz, sz), Image.BICUBIC).rotate(-12, expand=True, resample=Image.BICUBIC)
+        fr.alpha_composite(b, (PX + PH - 40 - b.size[0] // 2, PY + 40 - b.size[1] // 2))
+    return fr.convert("RGB")
+
+def render_nonetutto(t, dur):
+    fr = INTRO_BG.copy().convert("RGBA")
+    L = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
+    a = [ease((t - 0.15 - k * 0.3) / 0.5) for k in range(4)]
+    def A(c, x): return c + (int(255 * x),)
+    ctext(d, 520 + (1 - a[0]) * 30, "E non è tutto…", ds(130), A((214, 236, 196), a[0]))
+    ctext(d, 760 + (1 - a[1]) * 30, "tanti altri prodotti", pf(900, 96), A((255, 255, 255), a[1]))
+    ctext(d, 880 + (1 - a[1]) * 30, "in sconto", pf(900, 96), A((255, 210, 120), a[1]))
+    ctext(d, 1080 + (1 - a[2]) * 30, "cosmesi naturale, tisane e benessere", it("Medium", 40), A(CREAM, a[2]))
+    ctext(d, 1260 + (1 - a[3]) * 30, "e le nostre confezioni regalo", pf(700, 62), A((255, 255, 255), a[3]))
+    ctext(d, 1345 + (1 - a[3]) * 30, "fino al -30%", pf(900, 96), A((255, 210, 120), a[3]))
+    fr.alpha_composite(L)
+    return fr.convert("RGB")
+
 # ---------- intro ----------
 INTRO_BG = dots_bg(GREEN, (52, 88, 64), 64, 6)
 def render_intro(t, dur):
     fr = INTRO_BG.copy().convert("RGBA")
     L = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
-    a1 = ease(t / 0.6); a2 = ease((t - 0.5) / 0.6); a3 = ease((t - 1.0) / 0.6); a4 = ease((t - 1.5) / 0.5)
+    a1 = a2 = a3 = a4 = 1.0   # scritte visibili dal primo fotogramma (copertina automatica)
     def A(c, a): return c + (int(255 * a),)
-    ctext(d, 470 + (1 - a1) * 40, "Erboristeria Ape Cosmetica", it("SemiBold", 36), A(CREAM, a1))
-    ctext(d, 560 + (1 - a2) * 40, "BLACK", pf(900, 210), A((255, 255, 255), a2))
-    ctext(d, 770 + (1 - a2) * 40, "FRIDAY", pf(900, 210), A((255, 255, 255), a2))
-    ctext(d, 1020 + (1 - a3) * 30, "naturale", ds(150), A((214, 236, 196), a3))
-    ctext(d, 1240 + (1 - a4) * 30, "Confezioni regalo fatte a mano", it("Medium", 44), A(CREAM, a4))
-    ctext(d, 1306 + (1 - a4) * 30, "fino al -30%", pf(800, 92), A((255, 210, 120), a4))
+    ctext(d, 150, "Erboristeria", ds(96), A((214, 236, 196), a1))
+    ctext(d, 270, "APE COSMETICA  ·  OLBIA", it("Bold", 44), A(CREAM, a1))
+    ctext(d, 470, "BLACK", pf(900, 210), A((255, 255, 255), a2))
+    ctext(d, 680, "FRIDAY", pf(900, 210), A((255, 255, 255), a2))
+    ctext(d, 930, "dal 21 al 28 novembre", ds(110), A((214, 236, 196), a3))
+    for k, (riga, col) in enumerate([("L'Erbolario fino al -50%", (255, 210, 120)),
+                                     ("tanti altri prodotti in sconto", (255, 255, 255)),
+                                     ("confezioni regalo fino al -30%", (255, 210, 120))]):
+        ctext(d, 1150 + k * 105, riga, pf(800, 66), A(col, a4))
     fr.alpha_composite(L)
     return fr.convert("RGB")
 
@@ -226,7 +275,7 @@ def render_outro(t, dur):
     return fr.convert("RGB")
 
 # ---------- timeline ----------
-segs = [("intro", None, 2.8)] + [("slide", i, 2.7) for i in range(len(P))] + [("outro", None, 5.0)]
+segs = [("intro", None, 3.0), ("erbolario", None, 3.2), ("nonetutto", None, 2.8)] + [("slide", i, 2.5) for i in range(len(P))] + [("outro", None, 5.0)]
 XF = 0.35
 starts = []; t0 = 0
 for s in segs:
@@ -237,13 +286,15 @@ def seg_frame(k, t):
     kind, i, dur = segs[k]
     if kind == "intro": return render_intro(t, dur)
     if kind == "outro": return render_outro(t, dur)
+    if kind == "erbolario": return render_erbolario(t, dur)
+    if kind == "nonetutto": return render_nonetutto(t, dur)
     return render_slide(i, t, dur)
 
 ff = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
                        "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-preset", "medium", "-crf", "17",
                        "-pix_fmt", "yuv420p", "-movflags", "+faststart", OUT], stdin=subprocess.PIPE)
 N = int(TOTAL * FPS)
-cover_t = starts[1] + 1.6
+cover_t = 1.5
 for n in range(N):
     t = n / FPS
     act = [k for k in range(len(segs)) if starts[k] <= t < starts[k] + segs[k][2]]

@@ -38,7 +38,7 @@ Pubblicare come Reel su Instagram attivando "Condividi su Facebook".
 >
 > 🌿 Black Friday L'Erbolario anche nei nostri negozi, con gli stessi sconti: fino al -50%! Vieni a scoprire le linee in promozione: Ginepro Nero, Iris Bianco, Frangipani e tante altre.
 >
-> ✨ E non è tutto: da noi trovi in sconto anche tanti altri prodotti selezionati di cosmesi naturale, tisane e benessere.
+> ✨ E non è tutto: da noi trovi in sconto anche tanti altri prodotti selezionati di cosmesi naturale, tisane e benessere, come la linea Vaniglia Bianca al -20%.
 >
 > 🎁 E poi le nostre confezioni regalo, fatte a mano una per una: fino al -30%, già pronte da mettere sotto l'albero. Oppure scegli tu i prodotti e noi te li confezioniamo.
 >

@@ -219,9 +219,12 @@ def render_nonetutto(t, dur):
     ctext(d, 520 + (1 - a[0]) * 30, "E non è tutto…", ds(130), A((214, 236, 196), a[0]))
     ctext(d, 760 + (1 - a[1]) * 30, "tanti altri prodotti", pf(900, 96), A((255, 255, 255), a[1]))
     ctext(d, 880 + (1 - a[1]) * 30, "in sconto", pf(900, 96), A((255, 210, 120), a[1]))
-    ctext(d, 1080 + (1 - a[2]) * 30, "cosmesi naturale, tisane e benessere", it("Medium", 40), A(CREAM, a[2]))
-    ctext(d, 1260 + (1 - a[3]) * 30, "e le nostre confezioni regalo", pf(700, 62), A((255, 255, 255), a[3]))
-    ctext(d, 1345 + (1 - a[3]) * 30, "fino al -30%", pf(900, 96), A((255, 210, 120), a[3]))
+    ctext(d, 1040 + (1 - a[2]) * 30, "cosmesi naturale, tisane e benessere", it("Medium", 40), A(CREAM, a[2]))
+    y = 1130 + (1 - a[2]) * 30   # riquadro Vaniglia Bianca
+    d.rounded_rectangle((200, y, W - 200, y + 110), 55, fill=A((255, 255, 255), a[2]))
+    ctext(d, y + 55, "Vaniglia Bianca  -20%", pf(800, 60), A(GREEN, a[2]), anchor="mm")
+    ctext(d, 1330 + (1 - a[3]) * 30, "e le nostre confezioni regalo", pf(700, 62), A((255, 255, 255), a[3]))
+    ctext(d, 1415 + (1 - a[3]) * 30, "fino al -30%", pf(900, 96), A((255, 210, 120), a[3]))
     fr.alpha_composite(L)
     return fr.convert("RGB")
 

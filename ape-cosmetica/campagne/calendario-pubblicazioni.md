@@ -5,8 +5,8 @@ Il calendario è stato rifatto perché il **Black Friday L'Erbolario** parte pri
   fino al 50%" su una selezione delle linee Frangipani, Ginepro Nero, Iris Bianco, Acido Ialuronico e altre, più
   "fino al 30%" su altri prodotti. Testo: "Iniziativa valida su www.erbolario.com e presso i Punti Vendita aderenti,
   fino a esaurimento scorte delle quantità riservate alla promozione". Sul sito **non ci sono date di inizio e fine**.
-- In negozio, secondo il titolare, si parte da **sabato 21/11**. [DA CONFERMARE] la data di fine della promo L'Erbolario
-  e se i prezzi scontati valgono anche da noi.
+- In negozio si parte da **sabato 21/11**. Il 20/11 il titolare ha **confermato** che gli sconti L'Erbolario valgono
+  anche nei nostri due negozi. [DA CONFERMARE] la data di fine della promo L'Erbolario in negozio.
 - La nostra promo sulle confezioni (fino al -30%) resta fino a **sabato 28/11**.
 
 Alle ore indicate Claude manda al titolare video, copertina e testo pronti da pubblicare. I promemoria sono attività
@@ -38,7 +38,7 @@ Pubblicare come Reel su Instagram attivando "Condividi su Facebook".
 > 📍 Vieni a trovarci in Viale Aldo Moro 215 e in Corso Umberto 153, Olbia
 > #Olbia #Erboristeria #BlackFriday #RegaliDiNatale #CosmesiNaturale #ErbeDiSardegna #LErbolario
 
-Riga da aggiungere solo se il titolare conferma che la promo L'Erbolario vale in negozio:
+Riga da aggiungere (confermata dal titolare il 20/11), prima dell'ultima riga con gli indirizzi:
 > E in più, il Black Friday L'Erbolario: sconti fino al 50% su una selezione di prodotti delle linee Frangipani, Ginepro Nero, Iris Bianco e Acido Ialuronico, fino a esaurimento scorte.
 
 ## lun 23/11 – Inizia a pensare ai regali

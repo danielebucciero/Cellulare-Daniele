@@ -187,9 +187,9 @@ def erb_text():
     L = Image.new("RGBA", (W, 640), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
     ctext(d, 10, "BLACK FRIDAY L'ERBOLARIO", it("Bold", 32), GREEN2)
     ctext(d, 52, "fino al -50%", pf(900, 120), GREEN)
-    ctext(d, 200, "con gli stessi sconti anche nei nostri negozi", it("Medium", 34), GREY)
-    ctext(d, 252, "Frangipani · Ginepro Nero · Iris Bianco · Acido Ialuronico", it("Regular", 30), GREY)
-    ctext(d, 300, "e tante altre linee", it("Regular", 30), GREY)
+    ctext(d, 196, "Vieni in negozio a scoprire le linee in sconto:", it("Medium", 34), GREY)
+    ctext(d, 244, "Ginepro Nero · Iris Bianco · Frangipani", pf(700, 46), GREEN)
+    ctext(d, 304, "e tante altre", it("Medium", 32), GREY)
     ctext(d, 352, "dal 21 al 28 novembre · fino a esaurimento scorte", it("Medium", 30), RED)
     return L
 ERB_TXT = erb_text()

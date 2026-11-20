@@ -80,6 +80,8 @@ def shadow(size, rad, blur=28, opacity=110):
     ImageDraw.Draw(s).rounded_rectangle((pad, pad + 14, pad + size[0], pad + size[1] + 14), rad, fill=(40, 30, 20, opacity))
     return s.filter(ImageFilter.GaussianBlur(blur)), pad
 
+def ease_io(t):
+    t = max(0, min(1, t)); return 3 * t * t - 2 * t * t * t
 def ease(t): t = max(0, min(1, t)); return 1 - (1 - t) ** 3
 def ease_back(t):
     t = max(0, min(1, t)); c1 = 1.70158; c3 = c1 + 1
@@ -180,8 +182,10 @@ def render_slide(i, t, dur):
     return fr.convert("RGB")
 
 # ---------- scena Black Friday L'Erbolario ----------
-_sc = ImageOps.exif_transpose(Image.open(os.path.join(BASE, "foto", "2026-11-scaffale-erbolario", "scaffale.jpg"))).convert("RGB")
-ERB = _sc.crop((0, 0, _sc.size[0], _sc.size[0])).resize((int(PH * 1.12), int(PH * 1.12)), Image.LANCZOS)
+# materiale Black Friday L'Erbolario fotografato in negozio: si usa solo la fascia con i tre espositori
+# (esclusa la frase in alto rivolta ai rivenditori); l'inquadratura scorre da sinistra a destra
+_sc = ImageOps.exif_transpose(Image.open(os.path.join(BASE, "foto", "2026-11-scaffale-erbolario", "black-friday-erbolario.jpg"))).convert("RGB")
+ERB = _sc.crop((0, 575, _sc.size[0], 1512))   # alta 937 px
 ERB_BADGE = badge_img("-50%")
 def erb_text():
     L = Image.new("RGBA", (W, 640), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
@@ -196,8 +200,8 @@ ERB_TXT = erb_text()
 def render_erbolario(t, dur):
     fr = BG.copy().convert("RGBA")
     fr.alpha_composite(SH, (PX - SHPAD, PY - SHPAD))
-    k = t / dur; z = 1.12 - 0.10 * k; S = ERB.size[0]; cs = int(S / z)
-    ph = ERB.crop(((S - cs) // 2, 0, (S - cs) // 2 + cs, cs)).resize((PH, PH), Image.BILINEAR)
+    k = ease_io(min(1.0, t / (dur - XF))); side = ERB.size[1]; x = int((ERB.size[0] - side) * k)
+    ph = ERB.crop((x, 0, x + side, side)).resize((PH, PH), Image.BILINEAR)
     fr.paste(ph, (PX, PY), MASK)
     ImageDraw.Draw(fr).rounded_rectangle((PX, PY, PX + PH, PY + PH), RAD, outline=(255, 255, 255), width=8)
     fr.alpha_composite(HEADER)

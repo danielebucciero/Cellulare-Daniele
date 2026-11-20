@@ -32,3 +32,4 @@ Nei prezzi delle foto della galleria la confezione più economica è a 21,90 €
 Papavero Soave). Nel video non c'è il prezzo "da …", perché in negozio potrebbero esserci confezioni più economiche.
 
 - 20/11: la scritta "Erboristeria · APE COSMETICA · OLBIA" in alto è stata ingrandita in tutto il video, e ancora di più nella copertina.
+- 20/11: le scritte dell'apertura sono visibili già dal primo fotogramma, così anche la copertina automatica di Instagram è leggibile.

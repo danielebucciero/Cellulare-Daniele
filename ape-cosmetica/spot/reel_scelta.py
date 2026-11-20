@@ -203,7 +203,7 @@ def render_intro(t, dur, copertina=False):
     bg.alpha_composite(Image.new("RGBA", (W, H), GREEN + (170,)))
     fr = bg; fr.alpha_composite(HEAD_COPERTINA if copertina else HEAD_G)
     L = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
-    a = [ease((t - 0.2 - k * 0.35) / 0.55) for k in range(5)]
+    a = [1.0] * 5   # scritte già visibili dal primo fotogramma (copertina automatica di Instagram)
     ctext(d, 450 + (1 - a[0]) * 30, "Natale si avvicina…", ds(110), A(LIGHT, a[0]))
     ctext(d, 640 + (1 - a[1]) * 30, "inizia a pensare", pf(900, 100), A((255, 255, 255), a[1]))
     ctext(d, 760 + (1 - a[1]) * 30, "ai regali!", pf(900, 100), A(YELLOW, a[1]))

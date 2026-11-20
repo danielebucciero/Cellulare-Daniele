@@ -237,10 +237,10 @@ def render_intro(t, dur):
     ctext(d, 470, "BLACK", pf(900, 210), A((255, 255, 255), a2))
     ctext(d, 680, "FRIDAY", pf(900, 210), A((255, 255, 255), a2))
     ctext(d, 930, "dal 21 al 28 novembre", ds(110), A((214, 236, 196), a3))
-    for k, (riga, col) in enumerate([("L'Erbolario fino al -50%", (255, 210, 120)),
-                                     ("tanti altri prodotti in sconto", (255, 255, 255)),
-                                     ("confezioni regalo fino al -30%", (255, 210, 120))]):
-        ctext(d, 1150 + k * 105, riga, pf(800, 66), A(col, a4))
+    ctext(d, 1130, "L'Erbolario sconti fino al -50%", pf(800, 66), A((255, 210, 120), a4))
+    ctext(d, 1218, "vieni a scoprire le linee coinvolte", it("Medium", 40), A(CREAM, a4))
+    ctext(d, 1320, "tanti altri prodotti in sconto", pf(800, 66), A((255, 255, 255), a4))
+    ctext(d, 1425, "confezioni regalo fino al -30%", pf(800, 66), A((255, 210, 120), a4))
     fr.alpha_composite(L)
     return fr.convert("RGB")
 

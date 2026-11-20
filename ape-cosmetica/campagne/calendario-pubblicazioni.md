@@ -1,8 +1,8 @@
 # Calendario delle pubblicazioni – novembre/dicembre 2026
 
-Ogni giorno in calendario, alle **8:30 (ora italiana)**, Claude manda al titolare il video e il testo pronti da
-pubblicare. I promemoria sono attività programmate in questa sessione. Tutti i video hanno già la musica natalizia
-originale: **non aggiungere musica da Instagram**. Orario consigliato di pubblicazione: 18:00–20:00.
+Ogni giorno in calendario, alle **19:00 (ora italiana)**, Claude manda al titolare il video e il testo pronti da
+pubblicare subito. Fa eccezione la Storia "ultimo giorno" del 28/11, che arriva alle 8:30 perché va pubblicata al mattino. I promemoria sono attività programmate in questa sessione. Tutti i video hanno già la musica natalizia
+originale: **non aggiungere musica da Instagram**.
 Pubblicare come Reel su Instagram attivando "Condividi su Facebook".
 
 | Data | Video | Stato |

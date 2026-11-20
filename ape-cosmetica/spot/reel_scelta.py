@@ -1,4 +1,4 @@
-"""Reel verticale (1080x1920) "Scegli la fragranza, noi prepariamo la confezione".
+"""Reel verticale (1080x1920) "Inizia a pensare ai regali: scegli tu la fragranza, noi prepariamo la confezione".
 
 Simula un cliente davanti allo scaffale: l'inquadratura si avvicina alla fila della fragranza, la fila si illumina
 e un "tocco" la sceglie; poi compare la confezione regalo che prepariamo con quella fragranza.
@@ -37,10 +37,19 @@ SCELTE = [  # vista (x, y, larghezza; altezza = 4/3), fila da illuminare, colore
          domanda="O i Fiori d'Arancio?", foto="confezione-fiori-arancio.jpg", rit=(130, 350, 1350, 1977),
          nome="Confezione Fiori d'Arancio", contenuto="bagnoschiuma e crema fluida per il corpo", prezzo="41,50 €"),
 ]
-TIMELINE = [("intro", None, 2.9)]
+# altre confezioni già pronte: la foto scorre da sinistra a destra (testi: titolo, sottotitolo)
+GALLERIA = [
+    ("idee-1.jpg", "Lillà, Vetiver, Alba in Asia", "Bacche Fiori-Legni · Legni Fruttati · Bella di Notte · Gin Botanicals"),
+    ("idee-2.jpg", "Rosa, Vaniglia, Iris Bianco", "Giglio · Danza di Fiori · Bella di Notte"),
+    ("idee-3.jpg", "Ortensia, Papavero, Dattero", "Fiori d'Arancio · Iris · Giglio"),
+    ("idee-4.jpg", "Viola, Argan, Bouquet d'Oro", "Gin Botanicals · Nettare di Dattero"),
+]
+SFONDO_INTRO = "potpourri.jpg"
+TIMELINE = [("intro", None, 3.4)]
 for i in range(len(SCELTE)):
-    TIMELINE += [("scaffale", i, 2.7), ("confezione", i, 2.7)]
-TIMELINE += [("outro", None, 4.4)]
+    TIMELINE += [("scaffale", i, 2.4), ("confezione", i, 2.3)]
+TIMELINE += [("galleria", i, 3.0) for i in range(len(GALLERIA))]
+TIMELINE += [("pertempo", None, 3.4), ("outro", None, 4.6)]
 XF = 0.35
 
 # ---------- utilità ----------
@@ -97,7 +106,9 @@ def vista_img(v):
 def testo(lab, tit, sub, prezzo=None):
     L = Image.new("RGBA", (W, 420), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
     ctext(d, 0, lab, it("Bold", 28), GREEN2)
-    ctext(d, 44, tit, pf(700, 80 if len(tit) < 20 else 66), GREEN)
+    size = 80
+    while d.textlength(tit, font=pf(700, size)) > 900 and size > 48: size -= 2
+    ctext(d, 44 + (80 - size) // 2, tit, pf(700, size), GREEN)
     if sub: ctext(d, 150, sub, it("Regular", 32), GREY)
     if prezzo:
         f = pf(800, 56); w = d.textlength(prezzo, font=f) + 90
@@ -107,6 +118,35 @@ def testo(lab, tit, sub, prezzo=None):
 T_SCAF = [testo("SCEGLI LA FRAGRANZA", s["domanda"], "dal nostro scaffale L'Erbolario") for s in SCELTE]
 T_CONF = [testo("E NOI LA CONFEZIONIAMO", s["nome"], s["contenuto"], s["prezzo"]) for s in SCELTE]
 TXT_Y = CY + CH + 40
+T_GAL = [testo("E TANTE ALTRE IDEE", g[1], g[2]) for g in GALLERIA]
+GAL = [foto(g[0]) for g in GALLERIA]
+_bg = foto(SFONDO_INTRO); _s = max(W / _bg.size[0], H / _bg.size[1])
+_bg = _bg.resize((int(_bg.size[0] * _s) + 1, int(_bg.size[1] * _s) + 1), Image.LANCZOS)
+INTRO_BG_IMG = _bg.crop(((_bg.size[0] - W) // 2, (_bg.size[1] - H) // 2, (_bg.size[0] - W) // 2 + W, (_bg.size[1] - H) // 2 + H))
+
+def render_galleria(i, t, dur):
+    fr = BG_C.copy(); fr.alpha_composite(HEAD_C)
+    im = GAL[i]; hh = im.size[1]; ww = int(hh * CW / CH)
+    k = ease_io(clamp(t / dur)); x = int((im.size[0] - ww) * k)
+    card(fr, im.crop((x, 0, x + ww, hh)).resize((CW, CH), Image.BILINEAR))
+    e = ease((t - 0.3) / 0.5) * clamp((dur - XF - t) / 0.25)
+    fr.alpha_composite(fade(T_GAL[i], e), (0, int(TXT_Y + (1 - ease((t - 0.3) / 0.5)) * 40)))
+    return fr.convert("RGB")
+
+def render_pertempo(t, dur):
+    fr = BG_G.copy(); fr.alpha_composite(HEAD_G)
+    L = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
+    a = [ease((t - 0.2 - k * 0.35) / 0.55) for k in range(5)]
+    ctext(d, 470 + (1 - a[0]) * 30, "Non aspettare", ds(120), A(LIGHT, a[0]))
+    ctext(d, 610 + (1 - a[0]) * 30, "l'ultimo momento!", ds(120), A(LIGHT, a[0]))
+    ctext(d, 840 + (1 - a[1]) * 30, "Vieni a scegliere i tuoi regali", pf(700, 64), A((255, 255, 255), a[1]))
+    ctext(d, 930 + (1 - a[1]) * 30, "per tempo", pf(900, 96), A(YELLOW, a[1]))
+    y = 1120 + (1 - a[2]) * 30
+    d.rounded_rectangle((150, y, W - 150, y + 120), 60, fill=A(YELLOW, a[2]))
+    ctext(d, y + 60, "e noi li prepariamo per te", pf(700, 52), A(GREEN, a[2]), anchor="mm")
+    ctext(d, 1300 + (1 - a[3]) * 30, "con calma, uno per uno, a mano", it("Medium", 40), A(CREAM, a[3]))
+    fr.alpha_composite(L)
+    return fr.convert("RGB")
 
 def render_scaffale(i, t, dur):
     s = SCELTE[i]
@@ -153,14 +193,18 @@ def render_conf(i, t, dur):
     return fr.convert("RGB")
 
 def render_intro(t, dur):
-    fr = BG_G.copy(); fr.alpha_composite(HEAD_G)
+    z = 1.0 + 0.06 * clamp(t / dur); cw, ch = W / z, H / z
+    bg = INTRO_BG_IMG.crop((int((W - cw) / 2), int((H - ch) / 2), int((W + cw) / 2), int((H + ch) / 2))).resize((W, H), Image.BILINEAR).convert("RGBA")
+    bg.alpha_composite(Image.new("RGBA", (W, H), GREEN + (170,)))
+    fr = bg; fr.alpha_composite(HEAD_G)
     L = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
-    a = [ease((t - 0.2 - k * 0.35) / 0.55) for k in range(4)]
-    ctext(d, 520 + (1 - a[0]) * 30, "Scegli tu", ds(130), A(LIGHT, a[0]))
-    ctext(d, 700 + (1 - a[1]) * 30, "la fragranza,", pf(900, 120), A((255, 255, 255), a[1]))
-    ctext(d, 860 + (1 - a[2]) * 30, "noi prepariamo", pf(700, 84), A((255, 255, 255), a[2]))
-    ctext(d, 970 + (1 - a[2]) * 30, "la confezione regalo", pf(700, 84), A(YELLOW, a[2]))
-    ctext(d, 1160 + (1 - a[3]) * 30, "con i prodotti L'Erbolario", it("Medium", 42), A(CREAM, a[3]))
+    a = [ease((t - 0.2 - k * 0.35) / 0.55) for k in range(5)]
+    ctext(d, 450 + (1 - a[0]) * 30, "Natale si avvicina…", ds(110), A(LIGHT, a[0]))
+    ctext(d, 640 + (1 - a[1]) * 30, "inizia a pensare", pf(900, 100), A((255, 255, 255), a[1]))
+    ctext(d, 760 + (1 - a[1]) * 30, "ai regali!", pf(900, 100), A(YELLOW, a[1]))
+    ctext(d, 960 + (1 - a[2]) * 30, "Scegli tu la fragranza,", pf(700, 64), A((255, 255, 255), a[2]))
+    ctext(d, 1045 + (1 - a[2]) * 30, "noi prepariamo la confezione", pf(700, 64), A((255, 255, 255), a[2]))
+    ctext(d, 1200 + (1 - a[3]) * 30, "con i prodotti L'Erbolario", it("Medium", 42), A(CREAM, a[3]))
     fr.alpha_composite(L)
     return fr.convert("RGB")
 
@@ -173,8 +217,8 @@ def render_outro(t, dur):
     if a[0] > 0: fr.alpha_composite(fade(LOGO, a[0]), ((W - 420) // 2, int(170 + (1 - a[0]) * 30)))
     L = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
     ctext(d, 630 + (1 - a[1]) * 30, "Ti aspettiamo!", ds(120), A(LIGHT, a[1]))
-    ctext(d, 820 + (1 - a[2]) * 30, "Scegli la tua fragranza:", it("Medium", 40), A(CREAM, a[2]))
-    ctext(d, 874 + (1 - a[2]) * 30, "la confezione la prepariamo noi", pf(700, 58), A((255, 255, 255), a[2]))
+    ctext(d, 820 + (1 - a[2]) * 30, "Scegli i tuoi regali per tempo:", it("Medium", 40), A(CREAM, a[2]))
+    ctext(d, 874 + (1 - a[2]) * 30, "al resto pensiamo noi", pf(700, 62), A((255, 255, 255), a[2]))
     y = 1050 + (1 - a[3]) * 30
     ctext(d, y, "Viale Aldo Moro 215", pf(600, 56), A((255, 255, 255), a[3]))
     ctext(d, y + 72, "Corso Umberto 153", pf(600, 56), A((255, 255, 255), a[3]))
@@ -187,6 +231,8 @@ def frame(k, t):
     kind, i, dur = TIMELINE[k]
     if kind == "scaffale": return render_scaffale(i, t, dur)
     if kind == "confezione": return render_conf(i, t, dur)
+    if kind == "galleria": return render_galleria(i, t, dur)
+    if kind == "pertempo": return render_pertempo(t, dur)
     return (render_intro if kind == "intro" else render_outro)(t, dur)
 
 starts, t0 = [], 0.0
@@ -195,7 +241,7 @@ TOTAL = t0 + XF
 ff = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
                        "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-preset", "medium", "-crf", "17",
                        "-pix_fmt", "yuv420p", "-movflags", "+faststart", OUT], stdin=subprocess.PIPE)
-cover_t = starts[1] + 1.9
+cover_t = starts[0] + 2.6
 for n in range(int(TOTAL * FPS)):
     t = n / FPS
     act = [k for k in range(len(TIMELINE)) if starts[k] <= t < starts[k] + TIMELINE[k][2]]

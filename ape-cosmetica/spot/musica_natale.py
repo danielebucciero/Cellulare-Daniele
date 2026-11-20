@@ -94,15 +94,18 @@ def componi(durata):
         if i >= n: return
         j = min(n, i + len(sig)); buf[i:j] += g * sig[:j - i]
     bar = 4 * BEAT
-    nbars = len(MELODY)
+    # battute necessarie: per video più lunghi si ripetono le prime 6 e si chiude sempre con le ultime 2
+    nbars = max(len(MELODY), int(round((durata - 1.2) / bar)))
+    seq = [k % 6 for k in range(nbars - 2)] + [6, 7]
     start = 0.15
     for b in range(nbars):
+        q = seq[b]
         t_bar = start + b * bar
         # accordi, basso, arpa
-        if CHORDS[b][0] == "GA":
+        if CHORDS[q][0] == "GA":
             parts = [(0, G - 12, [G - 12, B - 12, D]), (2, A - 12, [A - 12, Cs, E])]
         else:
-            parts = [(0, CHORDS[b][0], CHORDS[b][1])]
+            parts = [(0, CHORDS[q][0], CHORDS[q][1])]
         for k, (off, root, notes) in enumerate(parts):
             length = (4 if len(parts) == 1 else 2) * BEAT
             last = (b == nbars - 1)
@@ -118,7 +121,7 @@ def componi(durata):
                 add(Rb, sig, t_bar + off * BEAT + s * BEAT / 2, 0.16 * (1 + pan))
         # melodia sulle campanelle
         tt = t_bar
-        for m, d in MELODY[b]:
+        for m, d in MELODY[q]:
             sig = bell(hz(m), 3.0 if b == nbars - 1 else 2.2)
             add(Lb, sig, tt, 0.30); add(Rb, sig, tt, 0.30)
             tt += d * BEAT

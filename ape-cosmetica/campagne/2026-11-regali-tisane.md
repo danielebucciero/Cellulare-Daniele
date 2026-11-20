@@ -31,3 +31,12 @@ Il nome "Armonia e Relax" è il nome del prodotto, non un claim: nei testi non c
 > Una tazza, una tisana preparata da noi, il miele di Sardegna… e un fiocco per chiudere tutto.
 > Scegli per tempo i tuoi regali nei nostri negozi: noi li confezioniamo per te. In negozio trovi tante altre idee: tè, tisane, teiere, cioccolato e calendari dell'Avvento.
 > #Olbia #ErboristeriaOlbia #Tisane #Neavita #YogiTea #MieleDiSardegna #ConfezioniRegalo #RegaliDiNatale #Natale2026
+
+## Versione 2 (20/11) – con la scelta dagli scaffali
+Su richiesta del titolare, prima della preparazione ora c'è la **scelta del cliente**, come nel Reel delle fragranze.
+1. "1 · Scegli la tazza – Questa tisaniera?": sullo scaffale delle tazze e teiere si illumina la tisaniera rosa
+   con l'anemone, poi arriva il "tocco".
+2. "2 · Scegli la tisana – E questa tisana?": sull'espositore verde si illuminano le tisane sfuse confezionate da noi.
+3. "E noi prepariamo la confezione": paglia e carta, la tazza scelta, la tisana scelta, poi la scatola chiusa con il fiocco.
+4. Seguono l'altra idea a 23,50 €, due scaffali (Neavita e Yogi Tea/Leone), "per tempo" e il finale.
+L'apertura ora dice "Scegli tu tazza e tisana, noi prepariamo la confezione". La durata è di circa 31 secondi.

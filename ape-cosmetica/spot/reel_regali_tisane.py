@@ -1,4 +1,4 @@
-"""Reel verticale (1080x1920) "Regali che scaldano": confezioni regalo di tisane, tè e miele.
+"""Reel verticale (1080x1920) "Regali che scaldano": il cliente sceglie tazza e tisana dagli scaffali, noi prepariamo la confezione.
 
 Racconto: apertura (scritte visibili dal primo fotogramma) -> preparazione passo per passo con foto vere
 (scatola con paglia e carta, tazza, tisana, scatola chiusa con il fiocco) -> un'altra confezione con prezzo ->
@@ -40,7 +40,21 @@ GALLERIA = [
     ("yogi-leone.jpg", "Yogi Tea e cioccolato Leone", "calendario dell'Avvento e confezioni già pronte"),
     ("infusi-frutta.jpg", "Infusi di frutta e miele", "infusi confezionati da noi · 100 g a 6,00 €"),
 ]
-TIMELINE = [("intro", None, 3.2)] + [("passo", i, 2.7) for i in range(len(PASSI))] + [("altra", None, 2.9)]
+# scelta dallo scaffale: foto, vista finale (x, y, larghezza; altezza = 4/3), zona da illuminare, colore, testi
+SCELTE = [
+    dict(foto="scaffale-teiere.jpg", vista=(0, 520, 760), fila=(70, 840, 300, 1035), colore=(236, 120, 170),
+         lab="1 · SCEGLI LA TAZZA", tit="Questa tisaniera?", sub="dal nostro scaffale di tazze e teiere"),
+    dict(foto="infusi-frutta.jpg", vista=(450, 950, 760), fila=(700, 1300, 935, 1660), colore=(120, 170, 255),
+         lab="2 · SCEGLI LA TISANA", tit="E questa tisana?", sub="tisane sfuse confezionate da noi"),
+]
+# dopo la scelta, la confezione si prepara con i prodotti scelti
+PASSI = [PASSI[0], (PASSI[1][0], "3", "LA TAZZA SCELTA", "Tisaniera Neavita", "con coperchio e filtro"),
+         (PASSI[2][0], "4", "LA TISANA SCELTA", "Tisana Bio Armonia e Relax", "confezionata da noi in negozio · 100 g"),
+         (PASSI[3][0], "5", "IL TOCCO FINALE", "Si chiude con il fiocco", "pronta da mettere sotto l'albero")]
+PASSI[0] = (PASSI[0][0], "", "E NOI PREPARIAMO LA CONFEZIONE", "Scatola e paglietta", "prima la paglia, poi la carta colorata")
+GALLERIA = [g for g in GALLERIA if g[0] in ("scaffale-neavita.jpg", "yogi-leone.jpg")]
+TIMELINE = [("intro", None, 3.2)] + [("scelta", i, 2.6) for i in range(len(SCELTE))]
+TIMELINE += [("passo", i, 2.5) for i in range(len(PASSI))] + [("altra", None, 2.9)]
 TIMELINE += [("galleria", i, 2.8) for i in range(len(GALLERIA))] + [("pertempo", None, 3.4), ("outro", None, 4.6)]
 XF = 0.35
 
@@ -100,7 +114,7 @@ def card(fr, img):
 def testo(lab, tit, sub, prezzo=None, num=None):
     L = Image.new("RGBA", (W, 420), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
     f = it("Bold", 28)
-    if num:
+    if num:  # cerchio con il numero
         lw = d.textlength(lab, font=f); x0 = (W - (52 + 14 + lw)) / 2
         d.ellipse((x0, -4, x0 + 52, 48), fill=GREEN)
         d.text((x0 + 26, 22), num, font=it("Bold", 30), fill=(255, 255, 255), anchor="mm")
@@ -129,6 +143,36 @@ INTRO_BG = _bg.crop(((_bg.size[0] - W) // 2, (_bg.size[1] - H) // 2, (_bg.size[0
 def scene_text(fr, layer, t, dur, dy=0):
     e = ease((t - 0.3) / 0.5) * clamp((dur - XF - t) / 0.25)
     if e > 0: fr.alpha_composite(fade(layer, e), (0, int(TXT_Y + dy + (1 - ease((t - 0.3) / 0.5)) * 40)))
+
+SC_IMG = [foto(c["foto"]) for c in SCELTE]
+SC_TXT = [testo(c["lab"], c["tit"], c["sub"]) for c in SCELTE]
+def render_scelta(i, t, dur):
+    c = SCELTE[i]; im = SC_IMG[i]; iw = im.size[0]
+    fr = BG_C.copy(); fr.alpha_composite(HEAD_C)
+    k = ease_io((t - 0.15) / 1.0)
+    vx, vy, vw = [a + (b - a) * k for a, b in zip((0, 0, iw), c["vista"])]
+    img = im.crop((int(vx), int(vy), int(vx + vw), int(vy + vw * 4 / 3))).resize((CW, CH), Image.BILINEAR).convert("RGBA")
+    sc = CW / vw; x0, y0, x1, y1 = c["fila"]
+    r0, r1, r2, r3 = (x0 - vx) * sc, (y0 - vy) * sc, (x1 - vx) * sc, (y1 - vy) * sc
+    lay = Image.new("RGBA", (CW, CH), (0, 0, 0, 0)); d = ImageDraw.Draw(lay)
+    g = ease((t - 1.05) / 0.35)
+    if g > 0:   # oscura il resto e illumina il prodotto scelto
+        dim = Image.new("RGBA", (CW, CH), (20, 20, 20, int(125 * g)))
+        hole = Image.new("L", (CW, CH), 0); ImageDraw.Draw(hole).rounded_rectangle((r0, r1, r2, r3), 18, fill=255)
+        dim.putalpha(Image.composite(Image.new("L", (CW, CH), 0), dim.getchannel("A"), hole))
+        img.alpha_composite(dim)
+        for wd, al in ((18, 0.25), (10, 0.5), (5, 1.0)):
+            d.rounded_rectangle((r0 - wd, r1 - wd, r2 + wd, r3 + wd), 18 + wd, outline=A(c["colore"], al * g), width=5)
+    p = ease_io((t - 0.65) / 0.5)   # il "tocco" del cliente
+    if p > 0 and t < dur - XF:
+        cx, cy = (r0 + r2) / 2, (r1 + r3) / 2; sx, sy = CW * 0.5, CH * 0.95
+        fx, fy = sx + (cx - sx) * p, sy + (cy - sy) * p; r = 34
+        d.ellipse((fx - r, fy - r, fx + r, fy + r), fill=(255, 255, 255, 150), outline=(255, 255, 255, 235), width=5)
+        w = (t - 1.15) / 0.6
+        if 0 < w < 1:
+            rr = r + 110 * w; d.ellipse((fx - rr, fy - rr, fx + rr, fy + rr), outline=(255, 255, 255, int(220 * (1 - w))), width=6)
+    img.alpha_composite(lay); card(fr, img.convert("RGB")); scene_text(fr, SC_TXT[i], t, dur)
+    return fr.convert("RGB")
 
 def render_passo(i, t, dur):
     fr = BG_C.copy(); fr.alpha_composite(HEAD_C)
@@ -162,8 +206,9 @@ def render_intro(t, dur, copertina=False):
     ctext(d, 440, "Natale si avvicina…", ds(110), LIGHT + (255,))
     ctext(d, 630, "Regali che", pf(900, 110), (255, 255, 255, 255))
     ctext(d, 760, "scaldano", pf(900, 120), YELLOW + (255,))
-    ctext(d, 960, "tisane, tè, miele e tazze", pf(700, 64), (255, 255, 255, 255))
-    ctext(d, 1050, "in confezioni regalo preparate da noi", it("Medium", 42), CREAM + (255,))
+    ctext(d, 960, "Scegli tu tazza e tisana,", pf(700, 64), (255, 255, 255, 255))
+    ctext(d, 1045, "noi prepariamo la confezione", pf(700, 64), (255, 255, 255, 255))
+    ctext(d, 1190, "tisane, tè, miele e tazze", it("Medium", 42), CREAM + (255,))
     fr.alpha_composite(L)
     return fr.convert("RGB")
 
@@ -204,6 +249,7 @@ def render_outro(t, dur):
 def frame(k, t):
     kind, i, dur = TIMELINE[k]
     if kind == "passo": return render_passo(i, t, dur)
+    if kind == "scelta": return render_scelta(i, t, dur)
     if kind == "galleria": return render_galleria(i, t, dur)
     return {"intro": render_intro, "altra": render_altra, "pertempo": render_pertempo, "outro": render_outro}[kind](t, dur)
 

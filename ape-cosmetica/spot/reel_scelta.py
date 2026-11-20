@@ -79,12 +79,17 @@ def shadow(w, h, r, blur=28):
 def foto(n): return ImageOps.exif_transpose(Image.open(FOTO_DIR + n)).convert("RGB")
 
 BG_C, BG_G = dots(CREAM, DOT), dots(GREEN, GDOT)
-def header(dark):
+def header(dark, grande=False):
     L = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
-    ctext(d, 112, "Erboristeria", ds(64), LIGHT if dark else GREEN)
-    ctext(d, 192, "APE COSMETICA  ·  OLBIA", it("SemiBold", 30), CREAM if dark else GREEN2)
+    if grande:   # solo per la copertina
+        ctext(d, 80, "Erboristeria", ds(116), LIGHT if dark else GREEN)
+        ctext(d, 232, "APE COSMETICA  ·  OLBIA", it("Bold", 52), CREAM if dark else GREEN2)
+    else:
+        ctext(d, 98, "Erboristeria", ds(76), LIGHT if dark else GREEN)
+        ctext(d, 192, "APE COSMETICA  ·  OLBIA", it("Bold", 36), CREAM if dark else GREEN2)
     return L
 HEAD_C, HEAD_G = header(False), header(True)
+HEAD_COPERTINA = header(True, grande=True)
 
 CW, CH = 780, 1040; CX, CY = (W - CW) // 2, 280; RAD = 34
 SH, SHP = shadow(CW, CH, RAD); MASK = rmask(CW, CH, RAD)
@@ -192,11 +197,11 @@ def render_conf(i, t, dur):
     fr.alpha_composite(fade(T_CONF[i], e), (0, int(TXT_Y - 6 + (1 - ease((t - 0.3) / 0.5)) * 40)))
     return fr.convert("RGB")
 
-def render_intro(t, dur):
+def render_intro(t, dur, copertina=False):
     z = 1.0 + 0.06 * clamp(t / dur); cw, ch = W / z, H / z
     bg = INTRO_BG_IMG.crop((int((W - cw) / 2), int((H - ch) / 2), int((W + cw) / 2), int((H + ch) / 2))).resize((W, H), Image.BILINEAR).convert("RGBA")
     bg.alpha_composite(Image.new("RGBA", (W, H), GREEN + (170,)))
-    fr = bg; fr.alpha_composite(HEAD_G)
+    fr = bg; fr.alpha_composite(HEAD_COPERTINA if copertina else HEAD_G)
     L = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
     a = [ease((t - 0.2 - k * 0.35) / 0.55) for k in range(5)]
     ctext(d, 450 + (1 - a[0]) * 30, "Natale si avvicina…", ds(110), A(LIGHT, a[0]))
@@ -249,7 +254,8 @@ for n in range(int(TOTAL * FPS)):
     else:
         a, b = act[0], act[-1]
         img = Image.blend(frame(a, t - starts[a]), frame(b, t - starts[b]), ease((t - starts[b]) / XF))
-    if abs(t - cover_t) < 0.5 / FPS: img.save(OUT.replace(".mp4", "_copertina.jpg"), quality=92)
+    if abs(t - cover_t) < 0.5 / FPS:   # copertina: apertura con la scritta del negozio più grande
+        render_intro(cover_t - starts[0], TIMELINE[0][2], copertina=True).save(OUT.replace(".mp4", "_copertina.jpg"), quality=92)
     ff.stdin.write(img.tobytes())
 ff.stdin.close(); ff.wait()
 print("durata", round(TOTAL, 2), "s")

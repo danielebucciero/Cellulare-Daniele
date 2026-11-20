@@ -236,11 +236,13 @@ def render_intro(t, dur):
     ctext(d, 270, "APE COSMETICA  ·  OLBIA", it("Bold", 44), A(CREAM, a1))
     ctext(d, 470, "BLACK", pf(900, 210), A((255, 255, 255), a2))
     ctext(d, 680, "FRIDAY", pf(900, 210), A((255, 255, 255), a2))
-    ctext(d, 930, "dal 21 al 28 novembre", ds(110), A((214, 236, 196), a3))
-    ctext(d, 1130, "L'Erbolario sconti fino al -50%", pf(800, 66), A((255, 210, 120), a4))
-    ctext(d, 1218, "vieni a scoprire le linee coinvolte", it("Medium", 40), A(CREAM, a4))
-    ctext(d, 1320, "tanti altri prodotti in sconto", pf(800, 66), A((255, 255, 255), a4))
-    ctext(d, 1425, "confezioni regalo fino al -30%", pf(800, 66), A((255, 210, 120), a4))
+    ctext(d, 900, "dal 21 al 28 novembre", ds(110), A((214, 236, 196), a3))
+    ctext(d, 1085, "L'Erbolario sconti", pf(800, 70), A((255, 255, 255), a4))
+    d.rounded_rectangle((90, 1180, W - 90, 1390), 40, fill=A((255, 210, 120), a4))   # riquadro "-50%" ben visibile
+    ctext(d, 1285, "fino al -50%", pf(900, 132), A((38, 70, 52), a4), anchor="mm")
+    ctext(d, 1420, "vieni a scoprire le linee coinvolte", it("SemiBold", 42), A(CREAM, a4))
+    ctext(d, 1540, "tanti altri prodotti in sconto", pf(700, 56), A((255, 255, 255), a4))
+    ctext(d, 1620, "confezioni regalo fino al -30%", pf(700, 56), A((255, 210, 120), a4))
     fr.alpha_composite(L)
     return fr.convert("RGB")
 

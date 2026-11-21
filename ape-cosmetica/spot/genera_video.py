@@ -282,6 +282,9 @@ def render_outro(t, dur):
 
 # ---------- timeline ----------
 segs = [("intro", None, 3.0), ("erbolario", None, 3.2), ("nonetutto", None, 2.8)] + [("slide", i, 2.5) for i in range(len(P))] + [("outro", None, 5.0)]
+if "--corto" in sys.argv:   # versione corta per le sponsorizzate (circa 17 s): 2 confezioni, scene più brevi
+    segs = [("intro", None, 2.6), ("erbolario", None, 3.0), ("nonetutto", None, 2.4),
+            ("slide", 0, 2.4), ("slide", len(P) - 1, 2.4), ("outro", None, 4.6)]
 XF = 0.35
 starts = []; t0 = 0
 for s in segs:

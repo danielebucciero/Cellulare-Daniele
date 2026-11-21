@@ -15,8 +15,8 @@ Pubblicare come Reel su Instagram attivando "Condividi su Facebook".
 
 | Data | Ora invio | Contenuto | Stato |
 |---|---|---|---|
-| **ven 20/11** | — | **Reel Black Friday** (L'Erbolario -50%, altri prodotti, confezioni -30%): inviato alle 11, programmato dal titolare per la sera | programmato |
-| sab 21/11 | 8:30 | Storia "Da oggi è Black Friday" (ricondividere il Reel) | da pubblicare |
+| **ven 20/11** | — | **Reel Black Friday** (L'Erbolario -50%, altri prodotti, confezioni -30%): inviato alle 11, programmato dal titolare per la sera | programmato, uscita da confermare |
+| sab 21/11 | 8:30 | Storia "Da oggi è Black Friday" (ricondividere il Reel) | istruzioni inviate il 21/11, pubblicazione da confermare |
 | lun 23/11 | 19:00 | Inizia a pensare ai regali (scegli la fragranza L'Erbolario) | da pubblicare |
 | mer 25/11 | 19:00 | Confezione Nettare di Dattero | da pubblicare |
 | gio 26/11 | 19:00 | Regali che scaldano (tazza e tisana scelte dagli scaffali) | da pubblicare |

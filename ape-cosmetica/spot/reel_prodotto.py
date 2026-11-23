@@ -22,6 +22,8 @@ DETTAGLI = [((320, 690, 760, 1400), "BagnoCrema", "con estratto e acqua distilla
             ((720, 620, 1160, 1480), "Sapone Profumato", "con estratto di Iris Bianco · 125 g")]
 PREZZO_VECCHIO, PREZZO_NUOVO, BOLLINO = "24,50", "17,00", "-30%"
 FINE = "fino a sabato 28 novembre"
+# scatola chiusa (tagliato il bordo in basso dove si vedevano le scarpe)
+CHIUSA = (os.path.join(BASE, "foto", "2026-11-iris-bianco", "scatola-chiusa.jpg"), (0, 300, 1512, 1680))
 
 def pf(w, s): return ImageFont.truetype(FONT + "playfair-display-latin-%d-normal.woff" % w, s)
 def ds(s): return ImageFont.truetype(FONT + "dancing-script-latin-700-normal.woff", s)
@@ -167,12 +169,28 @@ def render_outro(t, dur):
     ctext(d, 1300 + (1 - a[4]) * 30, "fino a esaurimento scorte", it("Medium", 34), A(LIGHT, a[4]))
     fr.alpha_composite(L); return fr.convert("RGB")
 
-TIMELINE = [("intro", None, 3.0)] + [("det", i, 2.6) for i in range(len(DETTAGLI))] + [("prezzo", None, 3.4), ("outro", None, 4.4)]
+_ch = ImageEnhance.Brightness(ImageOps.exif_transpose(Image.open(CHIUSA[0])).convert("RGB")).enhance(1.05).crop(CHIUSA[1])
+_r = CW / CH; _w, _h = _ch.size
+if _w / _h > _r: _nw = int(_h * _r); _ch = _ch.crop(((_w - _nw) // 2, 0, (_w - _nw) // 2 + _nw, _h))
+CHIUSA_IMG = _ch.resize((int(CW * 1.08), int(CH * 1.08)), Image.LANCZOS)
+def render_chiusa(t, dur):
+    fr = BG_C.copy(); fr.alpha_composite(HEAD_C)
+    z = 1.08 - 0.08 * clamp(t / dur); iw, ih = CHIUSA_IMG.size; cw, ch = CW * 1.08 / z, CH * 1.08 / z
+    card(fr, CHIUSA_IMG.crop((int((iw - cw) / 2), int((ih - ch) / 2), int((iw + cw) / 2), int((ih + ch) / 2))).resize((CW, CH), Image.BILINEAR))
+    e = ease((t - 0.3) / 0.5) * clamp((dur - XF - t) / 0.25)
+    if e > 0:
+        L = Image.new("RGBA", (W, 300), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
+        ctext(d, 0, "IL TOCCO FINALE", it("Bold", 30), GREEN2)
+        ctext(d, 46, "Pronta da regalare", pf(700, 84), GREEN)
+        ctext(d, 160, "nella scatola L'Erbolario, chiusa con il fiocco", it("Regular", 32), GREY)
+        fr.alpha_composite(fade(L, e), (0, int(CY + CH + 46 + (1 - ease((t - 0.3) / 0.5)) * 40)))
+    return fr.convert("RGB")
+TIMELINE = [("intro", None, 3.0)] + [("det", i, 2.6) for i in range(len(DETTAGLI))] + [("prezzo", None, 3.4), ("chiusa", None, 2.6), ("outro", None, 4.4)]
 XF = 0.35
 def frame(k, t):
     kind, i, dur = TIMELINE[k]
     if kind == "det": return render_det(i, t, dur)
-    return {"intro": render_intro, "prezzo": render_prezzo, "outro": render_outro}[kind](t, dur)
+    return {"intro": render_intro, "prezzo": render_prezzo, "chiusa": render_chiusa, "outro": render_outro}[kind](t, dur)
 starts, t0 = [], 0.0
 for s in TIMELINE: starts.append(t0); t0 += s[2] - XF
 TOTAL = t0 + XF

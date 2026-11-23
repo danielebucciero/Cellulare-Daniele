@@ -18,13 +18,13 @@ Pubblicare come Reel su Instagram attivando "Condividi su Facebook".
 | **ven 20/11** | — | **Reel Black Friday** (L'Erbolario -50%, altri prodotti, confezioni -30%): inviato alle 11, programmato dal titolare per la sera | programmato, uscita da confermare |
 | sab 21/11 | 8:30 | Storia "Da oggi è Black Friday" (ricondividere il Reel) | istruzioni inviate il 21/11, pubblicazione da confermare |
 | lun 23/11 | pomeriggio | **Reel Iris Bianco** (confezione -30%, 24,50 → 17,00), musica allegra | da pubblicare |
-| gio 26/11 | 19:00 | Regali che scaldano (tazza e tisana scelte dagli scaffali) | da pubblicare |
 | ven 27/11 | 8:30 | Storia: "Oggi è il Black Friday" (ricondividere il Reel del 21) | da pubblicare |
 | sab 28/11 | 8:30 | Storia: "Ultimo giorno!" | da pubblicare |
 | sab 28/11 | 19:00 | **Inizia a pensare ai regali**: apre la serie "Un'idea regalo al giorno" (deciso il 23/11) | da pubblicare |
 | dom 29/11 | 19:00 | Angolo tisane | da pubblicare |
 | lun 30/11 | 19:00 | Confezione Nettare di Dattero (spostata dal 25/11: senza sconto, 57,50 €) | da pubblicare |
 | mar 01/12 | 19:00 | Come nasce una confezione regalo (tisaniera, infuso, miele) | da pubblicare |
+| mer 02/12 | 19:00 | Regali che scaldano (spostato dal 26/11: senza sconto) | da pubblicare |
 
 ---
 

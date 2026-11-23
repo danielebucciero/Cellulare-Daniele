@@ -18,11 +18,11 @@ Pubblicare come Reel su Instagram attivando "Condividi su Facebook".
 | **ven 20/11** | — | **Reel Black Friday** (L'Erbolario -50%, altri prodotti, confezioni -30%): inviato alle 11, programmato dal titolare per la sera | programmato, uscita da confermare |
 | sab 21/11 | 8:30 | Storia "Da oggi è Black Friday" (ricondividere il Reel) | istruzioni inviate il 21/11, pubblicazione da confermare |
 | lun 23/11 | pomeriggio | **Reel Iris Bianco** (confezione -30%, 24,50 → 17,00), musica allegra | da pubblicare |
-| mar 24/11 | 19:00 | Inizia a pensare ai regali (scegli la fragranza L'Erbolario) – spostato dal 23 | da pubblicare |
 | mer 25/11 | 19:00 | Confezione Nettare di Dattero | da pubblicare |
 | gio 26/11 | 19:00 | Regali che scaldano (tazza e tisana scelte dagli scaffali) | da pubblicare |
 | ven 27/11 | 8:30 | Storia: "Oggi è il Black Friday" (ricondividere il Reel del 21) | da pubblicare |
 | sab 28/11 | 8:30 | Storia: "Ultimo giorno!" | da pubblicare |
+| sab 28/11 | 19:00 | **Inizia a pensare ai regali**: apre la serie "Un'idea regalo al giorno" (deciso il 23/11) | da pubblicare |
 | dom 29/11 | 19:00 | Angolo tisane | da pubblicare |
 | mar 01/12 | 19:00 | Come nasce una confezione regalo (tisaniera, infuso, miele) | da pubblicare |
 
@@ -97,3 +97,11 @@ Pubblicare come Reel su Instagram attivando "Condividi su Facebook".
 > Una tisaniera, un infuso confezionato da noi, il miele di Sardegna… e un nastro per chiudere tutto.
 > Questa è solo un'idea: in negozio ne trovi tante altre, per ogni gusto.
 > #Olbia #ErboristeriaOlbia #ConfezioniRegalo #IdeeRegalo #RegaliDiNatale #Tisane #MieleDiSardegna #Natale2026
+
+## Serie di dicembre: "Un'idea regalo al giorno" (dal 29/11, da definire)
+- Deciso dal titolare il 23/11: dopo il Black Friday, un'idea regalo al giorno.
+- Formato: un Reel corto da una sola foto (`spot/reel_prodotto.py`) con prodotto, contenuto e prezzo.
+- [DA CONFERMARE] Durata (fino al 24/12?), giorni (tutti o lun–sab) e foto con i prezzi delle confezioni.
+- Attenzione ai prezzi: dopo il Black Friday, per un nuovo sconto il "prezzo precedente" da indicare è il più
+  basso dei 30 giorni prima, cioè spesso quello del Black Friday (Codice del consumo, art. 17-bis).
+  Per questo, per i prodotti scontati nel Black Friday, meglio presentare "idea regalo a X €" senza "-%".

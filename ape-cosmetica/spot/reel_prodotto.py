@@ -185,12 +185,47 @@ def render_chiusa(t, dur):
         ctext(d, 160, "nella scatola L'Erbolario, chiusa con il fiocco", it("Regular", 32), GREY)
         fr.alpha_composite(fade(L, e), (0, int(CY + CH + 46 + (1 - ease((t - 0.3) / 0.5)) * 40)))
     return fr.convert("RGB")
-TIMELINE = [("intro", None, 3.0)] + [("det", i, 2.6) for i in range(len(DETTAGLI))] + [("prezzo", None, 3.4), ("chiusa", None, 2.6), ("outro", None, 4.4)]
+# ---------- busta: la scatola scende nella busta, si chiude con l'etichetta del negozio, consegna ----------
+_bd = os.path.join(BASE, "foto", "2026-11-iris-bianco")
+BUSTA = ImageEnhance.Brightness(ImageOps.exif_transpose(Image.open(os.path.join(_bd, "busta-erbolario.jpg"))).convert("RGB")).enhance(1.05).resize((CW, CH), Image.LANCZOS)
+SC = CW / 1512
+CUT = int(560 * SC)                       # bordo della busta: sotto questa linea c'è il davanti
+BUSTA_FRONT = BUSTA.crop((0, CUT, CW, CH))
+_ch2 = ImageOps.exif_transpose(Image.open(CHIUSA[0])).convert("RGB").crop((200, 330, 1400, 1530))
+BOX = _ch2.resize((330, 330), Image.LANCZOS).convert("RGBA"); BOX.putalpha(rmask(330, 330, 14))
+_et = ImageOps.exif_transpose(Image.open(os.path.join(_bd, "etichetta-negozio.jpg"))).convert("RGB").crop((455, 1120, 1135, 1500))
+_et = ImageEnhance.Color(ImageEnhance.Brightness(_et).enhance(1.18)).enhance(0.7)
+ETI = _et.resize((360, int(360 * _et.size[1] / _et.size[0])), Image.LANCZOS).convert("RGBA"); ETI.putalpha(rmask(*ETI.size, 10))
+def render_busta(t, dur):
+    fr = BG_C.copy(); fr.alpha_composite(HEAD_C)
+    exit_k = ease((t - (dur - 0.9)) / 0.6)            # alla fine la busta "parte" verso destra: consegnata
+    ox = int(exit_k * 160)
+    C = BUSTA.copy().convert("RGBA")
+    p = clamp((t - 0.2) / 1.3); y = int(-360 + (CUT + 120 + 360) * (p * p))  # la scatola cade nella busta
+    C.alpha_composite(BOX, ((CW - 330) // 2, y))
+    C.paste(BUSTA_FRONT, (0, CUT))                    # il davanti della busta copre la scatola
+    e = ease((t - 1.7) / 0.35)
+    if e > 0:                                         # etichetta del negozio "timbrata" sul bordo
+        sc = 1.6 - 0.6 * e; w, h = int(ETI.size[0] * sc), int(ETI.size[1] * sc)
+        et = fade(ETI.resize((w, h), Image.BICUBIC), e)
+        C.alpha_composite(et, ((CW - w) // 2, CUT - h // 2 + 10))
+    fr.alpha_composite(SH, (CX - SHP + ox, CY - SHP)); fr.paste(C.convert("RGB"), (CX + ox, CY), MASK)
+    ImageDraw.Draw(fr).rounded_rectangle((CX + ox, CY, CX + CW + ox, CY + CH), RAD, outline=(255, 255, 255), width=8)
+    L = Image.new("RGBA", (W, 320), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
+    a1, a2 = ease((t - 0.3) / 0.5), ease((t - 2.1) / 0.5)
+    ctext(d, 0, "E POI…", it("Bold", 30), A(GREEN2, a1))
+    ctext(d, 46, "nella busta, chiusa con il nostro sigillo", pf(700, 46), A(GREEN, a1))
+    ctext(d, 140, "pronta da consegnare 🎁".replace(" 🎁", ""), pf(900, 84), A(RED, a2))
+    ctext(d, 250, "a soli € " + PREZZO_NUOVO + " invece di € " + PREZZO_VECCHIO, it("SemiBold", 36), A(GREY, a2))
+    fr.alpha_composite(fade(L, clamp((dur - t) / 0.3)), (0, CY + CH + 40))
+    return fr.convert("RGB")
+
+TIMELINE = [("intro", None, 3.0)] + [("det", i, 2.6) for i in range(len(DETTAGLI))] + [("prezzo", None, 3.4), ("chiusa", None, 2.6), ("busta", None, 4.2), ("outro", None, 4.4)]
 XF = 0.35
 def frame(k, t):
     kind, i, dur = TIMELINE[k]
     if kind == "det": return render_det(i, t, dur)
-    return {"intro": render_intro, "prezzo": render_prezzo, "chiusa": render_chiusa, "outro": render_outro}[kind](t, dur)
+    return {"intro": render_intro, "prezzo": render_prezzo, "chiusa": render_chiusa, "busta": render_busta, "outro": render_outro}[kind](t, dur)
 starts, t0 = [], 0.0
 for s in TIMELINE: starts.append(t0); t0 += s[2] - XF
 TOTAL = t0 + XF

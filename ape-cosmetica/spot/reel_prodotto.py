@@ -169,10 +169,16 @@ def render_outro(t, dur):
     ctext(d, 1300 + (1 - a[4]) * 30, "fino a esaurimento scorte", it("Medium", 34), A(LIGHT, a[4]))
     fr.alpha_composite(L); return fr.convert("RGB")
 
-_ch = ImageEnhance.Brightness(ImageOps.exif_transpose(Image.open(CHIUSA[0])).convert("RGB")).enhance(1.05).crop(CHIUSA[1])
-_r = CW / CH; _w, _h = _ch.size
-if _w / _h > _r: _nw = int(_h * _r); _ch = _ch.crop(((_w - _nw) // 2, 0, (_w - _nw) // 2 + _nw, _h))
-CHIUSA_IMG = _ch.resize((int(CW * 1.08), int(CH * 1.08)), Image.LANCZOS)
+# scatola intera e centrata: la foto della scatola (fiocco compreso) sta tutta nella card;
+# sopra e sotto c'è la stessa foto ingrandita e sfocata, così la card resta piena
+_full = ImageEnhance.Brightness(ImageOps.exif_transpose(Image.open(CHIUSA[0])).convert("RGB")).enhance(1.05)
+_box = _full.crop((40, 320, 1440, 1660))                       # scatola con il fiocco, senza scarpe
+_bw = int(CW * 1.08); _bh = int(_box.size[1] * _bw / _box.size[0])
+_fg = _box.resize((_bw, _bh), Image.LANCZOS)
+_bg = _full.crop((300, 500, 1212, 1716)).resize((int(CW * 1.08), int(CH * 1.08)), Image.LANCZOS).filter(ImageFilter.GaussianBlur(28))
+_bg = ImageEnhance.Brightness(_bg).enhance(0.8)
+_bg.paste(_fg, (0, (_bg.size[1] - _bh) // 2))
+CHIUSA_IMG = _bg
 def render_chiusa(t, dur):
     fr = BG_C.copy(); fr.alpha_composite(HEAD_C)
     z = 1.08 - 0.08 * clamp(t / dur); iw, ih = CHIUSA_IMG.size; cw, ch = CW * 1.08 / z, CH * 1.08 / z
@@ -220,7 +226,7 @@ def render_busta(t, dur):
     fr.alpha_composite(fade(L, clamp((dur - t) / 0.3)), (0, CY + CH + 40))
     return fr.convert("RGB")
 
-TIMELINE = [("intro", None, 3.0)] + [("det", i, 2.6) for i in range(len(DETTAGLI))] + [("prezzo", None, 3.4), ("chiusa", None, 2.6), ("busta", None, 4.2), ("outro", None, 4.4)]
+TIMELINE = [("intro", None, 3.0)] + [("det", i, 2.6) for i in range(len(DETTAGLI))] + [("prezzo", None, 3.4), ("chiusa", None, 2.6)] + ([("busta", None, 4.2)] if "--busta" in sys.argv else []) + [("outro", None, 4.4)]
 XF = 0.35
 def frame(k, t):
     kind, i, dur = TIMELINE[k]

@@ -12,7 +12,6 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps, ImageEnhance
 W, H, FPS = 1080, 1920, 30
 BASE = os.path.dirname(os.path.abspath(__file__))
 FONT = os.path.join(BASE, "font") + os.sep
-OUT = sys.argv[1] if len(sys.argv) > 1 else "reel_prodotto.mp4"
 
 # ---------- contenuti ----------
 FOTO = os.path.join(BASE, "foto", "2026-11-iris-bianco", "confezione-iris-bianco.jpg")
@@ -24,6 +23,32 @@ PREZZO_VECCHIO, PREZZO_NUOVO, BOLLINO = "24,50", "17,00", "-30%"
 FINE = "fino a sabato 28 novembre"
 # scatola chiusa (tagliato il bordo in basso dove si vedevano le scarpe)
 CHIUSA = (os.path.join(BASE, "foto", "2026-11-iris-bianco", "scatola-chiusa.jpg"), (0, 300, 1512, 1680))
+TITOLO_PREZZO = "BagnoCrema + Sapone"
+CON_CHIUSA = True
+
+# ---------- altre confezioni (uso: python3 reel_prodotto.py <nome> <uscita.mp4>) ----------
+_F = lambda n: os.path.join(BASE, "foto", "2026-11-black-friday-confezioni", n)
+ALTRE = {
+    "karite": dict(FOTO=_F("karite.jpg"), MARCA="L'ERBOLARIO", NOME="Karité",
+        SOTTO="confezione regalo · BagnoCrema + BurroPuro", INTERA=(0, 200, 1512, 1800),
+        DETTAGLI=[((290, 630, 720, 1360), "BagnoCrema Nutriente", "Karité · 300 ml"),
+                  ((730, 280, 1270, 1410), "BurroPuro di Karité", "per corpo, viso e capelli · 120 ml")],
+        PREZZO_VECCHIO="44,90", PREZZO_NUOVO="31,40", BOLLINO="-30%", TITOLO_PREZZO="BagnoCrema + BurroPuro"),
+    "bacche": dict(FOTO=_F("bacche-fiori-legni.jpg"), MARCA="L'ERBOLARIO", NOME="Bacche Fiori Legni",
+        SOTTO="confezione regalo · Profumo + Crema corpo", INTERA=(213, 178, 2135, 2230),
+        DETTAGLI=[((468, 759, 1168, 1506), "Profumo", "Bacche Fiori Legni · 100 ml"),
+                  ((1233, 486, 1643, 1589), "Crema Fluida per il Corpo", "con estratti di Biancospino, Fiori d'Arancio e Legno di Cedro")],
+        PREZZO_VECCHIO="72,90", PREZZO_NUOVO="51,00", BOLLINO="-30%", TITOLO_PREZZO="Profumo + Crema corpo"),
+    "aloe": dict(FOTO=_F("aloe-attiva.jpg"), MARCA="NATUR UNIQUE", NOME="Aloe Attiva",
+        SOTTO="confezione regalo · crema fluida + crema gel viso", INTERA=(110, 0, 2116, 2362),
+        DETTAGLI=[((160, 738, 849, 2386), "Crema Fluida", "Aloe Attiva · viso, mani e corpo"),
+                  ((1033, 1156, 1599, 2017), "Face Cream Sphere", "Aloe Attiva · crema gel viso")],
+        PREZZO_VECCHIO="71,80", PREZZO_NUOVO="57,50", BOLLINO="-20%", TITOLO_PREZZO="Crema fluida + crema gel viso"),
+}
+if len(sys.argv) > 2 and sys.argv[1] in ALTRE:
+    globals().update(ALTRE[sys.argv[1]]); CON_CHIUSA = False; OUT = sys.argv[2]
+else:
+    OUT = sys.argv[1] if len(sys.argv) > 1 else "reel_prodotto.mp4"
 
 def pf(w, s): return ImageFont.truetype(FONT + "playfair-display-latin-%d-normal.woff" % w, s)
 def ds(s): return ImageFont.truetype(FONT + "dancing-script-latin-700-normal.woff", s)
@@ -145,7 +170,7 @@ def render_prezzo(t, dur):
     if e > 0:
         L = Image.new("RGBA", (W, 360), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
         ctext(d, 0, MARCA + " · " + NOME.upper(), it("Bold", 30), GREEN2)
-        ctext(d, 44, "BagnoCrema + Sapone", pf(700, 70), GREEN)
+        ctext(d, 44, TITOLO_PREZZO, pf(700, 70 if len(TITOLO_PREZZO) < 24 else 58), GREEN)
         prezzi(d, 280); ctext(d, 304, "solo " + FINE, it("Medium", 32), RED)
         fr.alpha_composite(fade(L, e), (0, int(CY + CH + 40 + (1 - ease((t - 0.3) / 0.5)) * 40)))
     return fr.convert("RGB")
@@ -229,7 +254,7 @@ def render_busta(t, dur):
     fr.alpha_composite(fade(L, clamp((dur - t) / 0.3)), (0, CY + CH + 40))
     return fr.convert("RGB")
 
-TIMELINE = [("intro", None, 3.0)] + [("det", i, 2.6) for i in range(len(DETTAGLI))] + [("prezzo", None, 3.4), ("chiusa", None, 2.6)] + ([("busta", None, 4.2)] if "--busta" in sys.argv else []) + [("outro", None, 4.4)]
+TIMELINE = [("intro", None, 3.0)] + [("det", i, 2.6) for i in range(len(DETTAGLI))] + [("prezzo", None, 3.4)] + ([("chiusa", None, 2.6)] if CON_CHIUSA else []) + ([("busta", None, 4.2)] if "--busta" in sys.argv else []) + [("outro", None, 4.4)]
 XF = 0.35
 def frame(k, t):
     kind, i, dur = TIMELINE[k]

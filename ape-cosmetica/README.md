@@ -48,6 +48,8 @@ nastro di raso colorato, paglietta colorata, etichetta tonda "Erboristeria Ape C
   e quelle mostrate sono solo alcune idee: in negozio ce ne sono tante altre.
   **Non invitare a prenotare** (né su WhatsApp né per telefono): è una scelta del titolare.
   **Non scrivere "pezzo unico"**: non tutte le confezioni lo sono.
+- **Dopo il Black Friday 2026 (dal 29/11) niente sconti**: si comunicano idee regalo a prezzo pieno e il servizio
+  di confezione su misura con i prodotti scelti dal cliente dallo scaffale.
 - **Prezzi:** copiarli sempre dai cartellini in negozio e ricontrollarli. Nel primo video del Black Friday 2026
   c'erano tre prezzi sbagliati.
 - **Sconto in percentuale:** deve essere vero. Si calcola sul prezzo più basso dei 30 giorni precedenti

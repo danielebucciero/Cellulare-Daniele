@@ -98,10 +98,12 @@ Pubblicare come Reel su Instagram attivando "Condividi su Facebook".
 > Questa è solo un'idea: in negozio ne trovi tante altre, per ogni gusto.
 > #Olbia #ErboristeriaOlbia #ConfezioniRegalo #IdeeRegalo #RegaliDiNatale #Tisane #MieleDiSardegna #Natale2026
 
-## Serie di dicembre: "Un'idea regalo al giorno" (dal 29/11, da definire)
-- Deciso dal titolare il 23/11: dopo il Black Friday, un'idea regalo al giorno.
-- Formato: un Reel corto da una sola foto (`spot/reel_prodotto.py`) con prodotto, contenuto e prezzo.
-- [DA CONFERMARE] Durata (fino al 24/12?), giorni (tutti o lun–sab) e foto con i prezzi delle confezioni.
-- Attenzione ai prezzi: dopo il Black Friday, per un nuovo sconto il "prezzo precedente" da indicare è il più
-  basso dei 30 giorni prima, cioè spesso quello del Black Friday (Codice del consumo, art. 17-bis).
-  Per questo, per i prodotti scontati nel Black Friday, meglio presentare "idea regalo a X €" senza "-%".
+## Serie di dicembre: "Un'idea regalo al giorno" (dal 29/11)
+Deciso dal titolare il 23/11.
+- **Nessuno sconto dopo il 28/11.** I prezzi sono normali: scrivere "Idea regalo a X €", mai "offerta" o "-%".
+- **Obiettivo:** far conoscere i prodotti e portare le persone in negozio a scegliere tra le confezioni già pronte,
+  oppure a farsi fare una confezione sul momento con i prodotti presi dallo scaffale.
+- **Chiusura fissa di ogni Reel:** "Scegli tra le nostre confezioni già pronte, oppure scegli i prodotti dallo scaffale:
+  la confezione te la prepariamo noi, al momento".
+- **Formato:** un Reel corto da una o due foto (`spot/reel_prodotto.py`, senza bollino e senza prezzo barrato).
+- [DA CONFERMARE] Durata (fino al 24/12?), giorni (tutti o lun–sab) e foto con i prezzi.

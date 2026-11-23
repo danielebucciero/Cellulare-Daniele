@@ -172,12 +172,15 @@ def render_outro(t, dur):
 # scatola intera e centrata: la foto della scatola (fiocco compreso) sta tutta nella card;
 # sopra e sotto c'è la stessa foto ingrandita e sfocata, così la card resta piena
 _full = ImageEnhance.Brightness(ImageOps.exif_transpose(Image.open(CHIUSA[0])).convert("RGB")).enhance(1.05)
-_box = _full.crop((40, 320, 1440, 1660))                       # scatola con il fiocco, senza scarpe
-_bw = int(CW * 1.08); _bh = int(_box.size[1] * _bw / _box.size[0])
+_box = _full.crop((0, 320, 1430, 1660))                        # scatola con il fiocco, senza scarpe
+# centra la SCATOLA ROSSA (centro a x 816, y 990 nella foto originale) nel mezzo della card
+_cw0, _ch0 = int(CW * 1.08), int(CH * 1.08)
+_s = (_cw0 / 2) / 816
+_bw, _bh = int(_box.size[0] * _s), int(_box.size[1] * _s)
 _fg = _box.resize((_bw, _bh), Image.LANCZOS)
 _bg = _full.crop((300, 500, 1212, 1716)).resize((int(CW * 1.08), int(CH * 1.08)), Image.LANCZOS).filter(ImageFilter.GaussianBlur(28))
 _bg = ImageEnhance.Brightness(_bg).enhance(0.8)
-_bg.paste(_fg, (0, (_bg.size[1] - _bh) // 2))
+_bg.paste(_fg, (int(_cw0 / 2 - 816 * _s), int(_ch0 / 2 - (990 - 320) * _s)))
 CHIUSA_IMG = _bg
 def render_chiusa(t, dur):
     fr = BG_C.copy(); fr.alpha_composite(HEAD_C)

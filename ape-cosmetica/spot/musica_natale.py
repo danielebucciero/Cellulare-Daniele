@@ -10,7 +10,9 @@ import sys, subprocess, json, wave, tempfile, os
 import numpy as np
 
 SR = 44100
-BPM = 96
+# stile: "natale" (predefinito), "allegro" (più veloce e brillante), "dolce" (lento, senza sonagli)
+STILE = os.environ.get("MUSICA_STILE", "natale")
+BPM = {"natale": 96, "allegro": 118, "dolce": 76}.get(STILE, 96)
 BEAT = 60 / BPM
 rng = np.random.default_rng(7)
 
@@ -85,6 +87,17 @@ MELODY = [  # (nota MIDI, durata in battiti), 4 battiti per battuta
     [(86, 4)],
 ]
 
+if STILE == "allegro":
+    MELODY = [
+        [(78, .5), (81, .5), (86, .5), (81, .5), (83, 1), (81, 1)],
+        [(78, .5), (83, .5), (86, .5), (83, .5), (85, 2)],
+        [(79, .5), (83, .5), (86, .5), (88, .5), (86, 1), (83, 1)],
+        [(81, .5), (85, .5), (88, .5), (85, .5), (88, 2)],
+        [(90, .5), (88, .5), (86, .5), (85, .5), (86, 1), (81, 1)],
+        [(83, .5), (86, .5), (90, .5), (86, .5), (88, 2)],
+        [(79, .5), (83, .5), (86, .5), (88, .5), (85, .5), (88, .5), (90, 1)],
+        [(86, 4)],
+    ]
 def componi(durata):
     n = int((durata + 0.5) * SR)
     Lb, Rb = np.zeros(n), np.zeros(n)     # campanelle + arpa (stereo)
@@ -135,6 +148,8 @@ def componi(durata):
     for k, m in enumerate([98, 93, 90, 86, 81, 78]):
         sig = bell(hz(m), 2.5); add(Lb, sig, tf + k * 0.09, 0.13); add(Rb, sig, tf + k * 0.09, 0.13)
 
+    if STILE == "dolce": bells_sl = bells_sl * 0.0
+    if STILE == "allegro": bassm = bassm * 1.25
     L = Lb + padm * 0.9 + bassm + bells_sl * 0.55
     R = Rb + padm * 0.9 + bassm + bells_sl * 0.4
     L = 0.78 * L + 0.32 * reverb(L, seed=1)

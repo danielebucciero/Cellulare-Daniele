@@ -1,6 +1,7 @@
 # Indice dei digest
 
 <!-- Le nuove righe vanno aggiunte in cima, sotto questo commento -->
+- [2026-11-23](2026/2026-11-23.md) — 6 novità: Cassazione 29054 investigatore e malattia; Cassazione 29047 permessi 104; Codice disabilità (preliminare); INPS msg 3801 indebiti via SEND; emendamenti Manovra; bonus assunzioni entro 31/12
 - [2026-11-20](2026/2026-11-20.md) — 3 novità: dettagli CCNL Pelli e Alimentare-Panificazione; trattative sanità privata, porti, credito; INPS circ. 113/2026
 - [2026-11-19](2026/2026-11-19.md) — 5 novità: art. 10 DL 62/2026 decorrenze anticipazione IPCA; sgravi contratti di solidarietà 30/11–10/12; interpello 5/2026 Terzo settore; INPS circ. 111 ex ILVA; CCNL Chimica Unilavoro PMI
 - [2026-11-18](2026/2026-11-18.md) — 5 novità: anticipazione IPCA per CCNL scaduti da 9 mesi; preintesa rinnovi dal 2027; CCNL Alimentare e Panificazione; CCNL Comunicazione artigiani; INPS circ. 111/2026 ex ILVA

@@ -25,4 +25,5 @@
 ## Scadenze una tantum da ricordare
 | Data | Adempimento |
 |---|---|
+| 31 dicembre 2026 | Ultimo giorno per le assunzioni con i bonus del Decreto Lavoro 2026 (da verificare per singola misura) |
 | 1 gennaio 2027 | Avvio dell'anticipazione del 50% IPCA-NEI per i CCNL privati già scaduti prima del D.L. 62/2026 (art. 10; da verificare sul testo) |

@@ -18,6 +18,9 @@ Pubblicare come Reel su Instagram attivando "Condividi su Facebook".
 | **ven 20/11** | — | **Reel Black Friday** (L'Erbolario -50%, altri prodotti, confezioni -30%): inviato alle 11, programmato dal titolare per la sera | programmato, uscita da confermare |
 | sab 21/11 | 8:30 | Storia "Da oggi è Black Friday" (ricondividere il Reel) | istruzioni inviate il 21/11, pubblicazione da confermare |
 | lun 23/11 | pomeriggio | **Reel Iris Bianco** (confezione -30%, 24,50 → 17,00), musica allegra | da pubblicare |
+| mar 24/11 | 19:00 | **Reel Karité** (confezione -30%, 44,90 → 31,40) | da pubblicare |
+| mer 25/11 | 19:00 | **Reel Bacche Fiori Legni** (confezione -30%, 72,90 → 51,00) | da pubblicare |
+| gio 26/11 | 19:00 | **Reel Aloe Attiva** (confezione -20%, 71,80 → 57,50) | da pubblicare |
 | ven 27/11 | 8:30 | Storia: "Oggi è il Black Friday" (ricondividere il Reel del 21) | da pubblicare |
 | sab 28/11 | 8:30 | Storia: "Ultimo giorno!" | da pubblicare |
 | sab 28/11 | 19:00 | **Inizia a pensare ai regali**: apre la serie "Un'idea regalo al giorno" (deciso il 23/11) | da pubblicare |
@@ -107,3 +110,28 @@ Deciso dal titolare il 23/11.
   la confezione te la prepariamo noi, al momento".
 - **Formato:** un Reel corto da una o due foto (`spot/reel_prodotto.py`, senza bollino e senza prezzo barrato).
 - [DA CONFERMARE] Durata (fino al 24/12?), giorni (tutti o lun–sab) e foto con i prezzi.
+
+## Reel Black Friday delle singole confezioni (24–26/11)
+I file sono in `2026-black-friday/`: `<Nome>_Black_Friday_DEFINITIVO.mp4`, con musica allegra, e `<Nome>_Black_Friday_COPERTINA.jpg`.
+Si generano con `python3 spot/reel_prodotto.py karite|bacche|aloe <uscita.mp4>`.
+
+**mar 24/11 – Karité** (Karite_…)
+> 🤎 Black Friday: confezione regalo Karité L'Erbolario a soli 31,40 € invece di 44,90 € (-30%)
+> Dentro trovi il BagnoCrema Nutriente (300 ml) e il BurroPuro di Karité per corpo, viso e capelli (120 ml), in una confezione preparata a mano da noi 🎁
+> ⏳ Solo fino a sabato 28 novembre, fino a esaurimento scorte
+> 📍 Viale Aldo Moro 215 e Corso Umberto 153 – Olbia
+> #Olbia #ErboristeriaOlbia #BlackFriday #LErbolario #Karite #ConfezioniRegalo #RegaliDiNatale
+
+**mer 25/11 – Bacche Fiori Legni** (Bacche_Fiori_Legni_…)
+> 🍂 Black Friday: confezione regalo Bacche Fiori Legni L'Erbolario a soli 51,00 € invece di 72,90 € (-30%)
+> Il Profumo (100 ml) e la Crema Fluida per il Corpo con estratti di Biancospino, Fiori d'Arancio e Legno di Cedro, confezionati a mano da noi 🎁
+> ⏳ Solo fino a sabato 28 novembre, fino a esaurimento scorte
+> 📍 Viale Aldo Moro 215 e Corso Umberto 153 – Olbia
+> #Olbia #ErboristeriaOlbia #BlackFriday #LErbolario #BaccheFioriLegni #ConfezioniRegalo #RegaliDiNatale
+
+**gio 26/11 – Aloe Attiva** (Aloe_Attiva_…)
+> 🌿 Black Friday: confezione regalo Aloe Attiva Natur Unique a soli 57,50 € invece di 71,80 € (-20%)
+> La Crema Fluida per viso, mani e corpo e la crema gel viso Face Cream Sphere, in una confezione preparata a mano da noi 🎁
+> ⏳ Solo fino a sabato 28 novembre, fino a esaurimento scorte
+> 📍 Viale Aldo Moro 215 e Corso Umberto 153 – Olbia
+> #Olbia #ErboristeriaOlbia #BlackFriday #AloeAttiva #NaturUnique #ConfezioniRegalo #RegaliDiNatale

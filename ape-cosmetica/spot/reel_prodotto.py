@@ -35,12 +35,12 @@ ALTRE = {
                   ((730, 280, 1270, 1410), "BurroPuro di Karité", "per corpo, viso e capelli · 120 ml")],
         PREZZO_VECCHIO="44,90", PREZZO_NUOVO="31,40", BOLLINO="-30%", TITOLO_PREZZO="BagnoCrema + BurroPuro"),
     "bacche": dict(FOTO=_F("bacche-fiori-legni.jpg"), MARCA="L'ERBOLARIO", NOME="Bacche Fiori Legni",
-        SOTTO="confezione regalo · Profumo + Crema corpo", INTERA=(213, 178, 2135, 2230),
+        SOTTO="confezione regalo · Profumo + Crema corpo", INTERA=(330, 0, 2010, 2240),
         DETTAGLI=[((468, 759, 1168, 1506), "Profumo", "Bacche Fiori Legni · 100 ml"),
                   ((1233, 486, 1643, 1589), "Crema Fluida per il Corpo", "con estratti di Biancospino, Fiori d'Arancio e Legno di Cedro")],
         PREZZO_VECCHIO="72,90", PREZZO_NUOVO="51,00", BOLLINO="-30%", TITOLO_PREZZO="Profumo + Crema corpo"),
     "aloe": dict(FOTO=_F("aloe-attiva.jpg"), MARCA="NATUR UNIQUE", NOME="Aloe Attiva",
-        SOTTO="confezione regalo · crema fluida + crema gel viso", INTERA=(110, 0, 2116, 2362),
+        SOTTO="confezione regalo · crema fluida + crema gel viso", INTERA=(180, 0, 2026, 2460),
         DETTAGLI=[((160, 738, 849, 2386), "Crema Fluida", "Aloe Attiva · viso, mani e corpo"),
                   ((1033, 1156, 1599, 2017), "Face Cream Sphere", "Aloe Attiva · crema gel viso")],
         PREZZO_VECCHIO="71,80", PREZZO_NUOVO="57,50", BOLLINO="-20%", TITOLO_PREZZO="Crema fluida + crema gel viso"),
@@ -143,7 +143,9 @@ def render_intro(t, dur):           # scritte già visibili al primo fotogramma 
     b = BADGE.rotate(-12, expand=True, resample=Image.BICUBIC); fr.alpha_composite(b, (x2 + w2 - 40 - b.size[0] // 2, y + 20 - b.size[1] // 2))
     L = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
     ctext(d, 1350, MARCA, it("Bold", 34), CREAM + (255,))
-    ctext(d, 1395, NOME, pf(900, 118), (255, 255, 255, 255))
+    _sz = 118
+    while d.textlength(NOME, font=pf(900, _sz)) > 960 and _sz > 60: _sz -= 4
+    ctext(d, 1395 + (118 - _sz) // 2, NOME, pf(900, _sz), (255, 255, 255, 255))
     ctext(d, 1540, SOTTO, it("Medium", 36), LIGHT + (255,))
     d.rounded_rectangle((W // 2 - 330, 1620, W // 2 + 330, 1740), 60, fill=YELLOW + (255,))
     ctext(d, 1680, "a soli € " + PREZZO_NUOVO, pf(800, 64), GREEN + (255,), anchor="mm")

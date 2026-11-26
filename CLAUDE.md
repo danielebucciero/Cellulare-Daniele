@@ -1,6 +1,20 @@
 # Istruzioni per Claude
 
-Questo repository è un osservatorio sulla consulenza del lavoro in Italia. Scrivi sempre in italiano.
+Scrivi sempre in italiano. Il repository contiene tre aree di lavoro del titolare di Ape Cosmetica S.r.l.
+(erboristeria a Olbia). Capisci dall'inizio della richiesta di quale area si tratta e leggi prima la sua scheda:
+
+| Area | Parole d'inizio tipiche | Leggi prima |
+|---|---|---|
+| **Pubblicità e social** | "Social:", post, Reel, video, Instagram, Facebook, sito, sponsorizzata | `ape-cosmetica/README.md`, `ape-cosmetica/campagne/`, skill `pubblicita-e-social` |
+| **Magazzino e gestione** | "Magazzino:", scorte, ordini, fornitori, inventario | `magazzino/README.md` |
+| **Consultazione contabile** | "Contabilità:", fisco, scadenze, F24, personale, lavoro | `contabilita/README.md` e, per il lavoro, l'osservatorio qui sotto |
+
+Se la richiesta non è chiara, chiedi a quale area appartiene. Non mescolare le aree nello stesso file.
+
+## Osservatorio sulla consulenza del lavoro
+
+I file nella radice (`digest/`, `scadenzario.md`, `temi.md`, `fonti.md`, `templates/`, `note/`) sono un osservatorio
+sulla consulenza del lavoro in Italia.
 
 ## Generazione del digest giornaliero
 
@@ -23,12 +37,9 @@ Quando ti viene chiesto di generare il digest:
 7. Aggiorna `digest/INDICE.md` aggiungendo in cima una riga: `- [AAAA-MM-GG](AAAA/AAAA-MM-GG.md) — N novità: titoli brevi`.
 8. Fai commit con messaggio `Digest AAAA-MM-GG` e push sul branch `main`.
 
-## Cartella `ape-cosmetica/`
+## Cartelle `ape-cosmetica/`, `magazzino/`, `contabilita/`
 
-È separata dall'osservatorio: contiene scheda, campagne pubblicitarie e generatore di video per
-l'Erboristeria Ape Cosmetica di Olbia. Se la richiesta riguarda l'erboristeria, spot, post social o
-il sito apecosmetica.com, leggi prima `ape-cosmetica/README.md` e i file in `ape-cosmetica/campagne/`.
-Le istruzioni sul digest non si applicano a questa cartella.
+Sono separate dall'osservatorio: le istruzioni sul digest non si applicano a queste cartelle.
 
 ## Regole
 

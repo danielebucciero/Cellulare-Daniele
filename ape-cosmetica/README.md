@@ -48,6 +48,8 @@ nastro di raso colorato, paglietta colorata, etichetta tonda "Erboristeria Ape C
   e quelle mostrate sono solo alcune idee: in negozio ce ne sono tante altre.
   **Non invitare a prenotare** (né su WhatsApp né per telefono): è una scelta del titolare.
   **Non scrivere "pezzo unico"**: non tutte le confezioni lo sono.
+- **Dopo il Black Friday 2026 (dal 29/11) niente sconti**: si comunicano idee regalo a prezzo pieno e il servizio
+  di confezione su misura con i prodotti scelti dal cliente dallo scaffale.
 - **Prezzi:** copiarli sempre dai cartellini in negozio e ricontrollarli. Nel primo video del Black Friday 2026
   c'erano tre prezzi sbagliati.
 - **Sconto in percentuale:** deve essere vero. Si calcola sul prezzo più basso dei 30 giorni precedenti
@@ -57,3 +59,10 @@ nastro di raso colorato, paglietta colorata, etichetta tonda "Erboristeria Ape C
 - **Claim:** su cosmetici, tisane e integratori niente promesse terapeutiche ("cura", "guarisce").
   Usare "aiuta", "nutre", "coccola".
 - **Foto:** controllare che nei vetri o nelle finestre delle scatole non ci siano riflessi di persone.
+
+## Musica dei Reel
+- `spot/musica_natale.py` compone e sintetizza una **musica natalizia originale**, senza diritti di terzi:
+  campanelle, arpa, accordi morbidi e sonagli, in Re maggiore a 96 bpm, a circa -14 LUFS.
+- `python3 spot/musica_natale.py --monta <video.mp4> <video_con_musica.mp4>` crea la musica della durata
+  giusta e la monta nel video.
+- In alternativa la musica si aggiunge da Instagram. In quel caso usare il video senza audio, per non sovrapporre due tracce.

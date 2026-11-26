@@ -1,6 +1,7 @@
 # Indice dei digest
 
 <!-- Le nuove righe vanno aggiunte in cima, sotto questo commento -->
+- [2026-11-26](2026/2026-11-26.md) — 4 novità: interpello 5/2026 IRCCS privati; una tantum CCNL di novembre; patente a crediti formazione stranieri; INPS msg 3859 e circ. 115
 - [2026-11-25](2026/2026-11-25.md) — 3 novità: dettagli ipotesi CCNL Pelletteria (fino al 31/03/2029); CCNL ISMEA; INPS circ. 116/2026
 - [2026-11-24](2026/2026-11-24.md) — 4 novità: elenco soggetti abilitati verifiche attrezzature; INPS autoimpiego Decreto Coesione; deposito contratti di prossimità; concorso 300 ispettori INL
 - [2026-11-23](2026/2026-11-23.md) — 6 novità: Cassazione 29054 investigatore e malattia; Cassazione 29047 permessi 104; Codice disabilità (preliminare); INPS msg 3801 indebiti via SEND; emendamenti Manovra; bonus assunzioni entro 31/12

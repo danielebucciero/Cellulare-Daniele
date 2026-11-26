@@ -20,7 +20,7 @@ Pubblicare come Reel su Instagram attivando "Condividi su Facebook".
 | lun 23/11 | pomeriggio | **Reel Iris Bianco** (confezione -30%, 24,50 → 17,00), musica allegra | da pubblicare |
 | mar 24/11 | 19:00 | **Reel Karité** (confezione -30%, 44,90 → 31,40) | inviato il 24/11 alle 19, pubblicazione da confermare |
 | mer 25/11 | 19:00 | **Reel Bacche Fiori Legni** (confezione -30%, 72,90 → 51,00) | inviato il 25/11 alle 19, pubblicazione da confermare |
-| gio 26/11 | 19:00 | **Reel Aloe Attiva** (confezione -20%, 71,80 → 57,50) | da pubblicare |
+| gio 26/11 | 19:00 | **Reel Aloe Attiva** (confezione -20%, 71,80 → 57,50) | inviato il 26/11 alle 19, pubblicazione da confermare |
 | ven 27/11 | 8:30 | Storia: "Oggi è il Black Friday" (ricondividere il Reel del 21) | da pubblicare |
 | sab 28/11 | 8:30 | Storia: "Ultimo giorno!" | da pubblicare |
 | sab 28/11 | 19:00 | **Inizia a pensare ai regali**: apre la serie "Un'idea regalo al giorno" (deciso il 23/11) | da pubblicare |

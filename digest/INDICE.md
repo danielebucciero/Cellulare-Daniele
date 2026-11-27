@@ -1,6 +1,7 @@
 # Indice dei digest
 
 <!-- Le nuove righe vanno aggiunte in cima, sotto questo commento -->
+- [2026-11-27](2026/2026-11-27.md) — 4 novità: nota INL–Regioni 2629/2026 sul preposto; perequazione pensioni 2027 in GU; INPS msg 3900 ricongiunzione; INPS circ. 117/2026
 - [2026-11-26](2026/2026-11-26.md) — 4 novità: interpello 5/2026 IRCCS privati; una tantum CCNL di novembre; patente a crediti formazione stranieri; INPS msg 3859 e circ. 115
 - [2026-11-25](2026/2026-11-25.md) — 3 novità: dettagli ipotesi CCNL Pelletteria (fino al 31/03/2029); CCNL ISMEA; INPS circ. 116/2026
 - [2026-11-24](2026/2026-11-24.md) — 4 novità: elenco soggetti abilitati verifiche attrezzature; INPS autoimpiego Decreto Coesione; deposito contratti di prossimità; concorso 300 ispettori INL

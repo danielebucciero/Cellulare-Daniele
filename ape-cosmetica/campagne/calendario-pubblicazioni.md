@@ -22,7 +22,7 @@ Pubblicare come Reel su Instagram attivando "Condividi su Facebook".
 | mer 25/11 | 19:00 | **Reel Bacche Fiori Legni** (confezione -30%, 72,90 → 51,00) | inviato il 25/11 alle 19, pubblicazione da confermare |
 | gio 26/11 | 19:00 | **Reel Aloe Attiva** (confezione -20%, 71,80 → 57,50) | inviato il 26/11 alle 19, pubblicazione da confermare |
 | ven 27/11 | 8:30 | Storia: "Oggi è il Black Friday" (ricondividere il Reel del 20) | istruzioni inviate il 27/11, pubblicazione da confermare |
-| sab 28/11 | 8:30 | Storia: "Ultimo giorno!" | da pubblicare |
+| sab 28/11 | 8:30 | Storia: "Ultimo giorno!" (`2026-black-friday/Storia_Ultimo_Giorno_Black_Friday.jpg`) | immagine inviata il 28/11, pubblicazione da confermare |
 | sab 28/11 | 19:00 | **Inizia a pensare ai regali**: apre la serie "Un'idea regalo al giorno" (deciso il 23/11) | da pubblicare |
 | dom 29/11 | 19:00 | Angolo tisane | da pubblicare |
 | lun 30/11 | 19:00 | Confezione Nettare di Dattero (spostata dal 25/11: senza sconto, 57,50 €) | da pubblicare |
